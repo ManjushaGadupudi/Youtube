@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "The US State You Can Only Drive To From Canada",
+    "sourceScript": "scripts/northwest-angle-through-canada.md",
+    "_convention": "Duration omitted per beat -- build_video.js fills it in from measured narration length. highlight stays ['US'] throughout (the Angle is US territory); Canada/Manitoba/Ontario are carried by markers, matching the Kaliningrad-script convention of only highlighting the country the video is about."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This is the only part of the US mainland north of the 49th parallel, and you can't drive there without leaving the country.",
+      "onScreenText": "Only reachable through Canada.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US"],
+      "camera": { "from": [[-125, 24], [-66, 50]], "to": [[-99, 45.5], [-89, 51]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called the Northwest Angle, a remote pocket of Minnesota stranded above the border by an inaccurate 1783 treaty map.",
+      "onScreenText": "Stranded by an 1783 map.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US"],
+      "camera": { "from": [[-99, 45.5], [-89, 51]], "to": [[-96.5, 48.2], [-93.3, 50.0]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-96.5, 49.7], "label": "MANITOBA, CANADA", "showAt": 0.35 },
+        { "lonlat": [-94.3, 49.5], "label": "ONTARIO, CANADA", "showAt": 0.42 },
+        { "lonlat": [-95.1, 49.35], "label": "NORTHWEST ANGLE", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_treaty_mistake",
+      "voText": "Treaty negotiators assumed the Mississippi's headwaters sat near here. They didn't, and by the time surveyors found the mistake, the border was already law.",
+      "onScreenText": "A treaty mistake.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US"],
+      "camera": { "from": [[-96.5, 48.2], [-93.3, 50.0]], "to": [[-95.8, 48.95], [-94.5, 49.45]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-95.15, 49.38], "label": "NW ANGLE", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[-96.0, 49.0], [-94.7, 49.0]], "dashed": true, "showAt": 0.2, "drawDuration": 0.5 },
+        { "points": [[-96.0, 49.0], [-95.9, 49.35], [-95.05, 49.35], [-94.9, 49.0]], "dashed": false, "showAt": 0.55, "drawDuration": 0.4 }
+      ]
+    },
+    {
+      "id": "beat4_drive_through_manitoba",
+      "voText": "Today, the only land route in cuts straight through Manitoba, Canada, drive south again, and you're back in the United States.",
+      "onScreenText": "Drive through Canada to get home.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US"],
+      "camera": { "from": [[-95.8, 48.95], [-94.5, 49.45]], "to": [[-95.4, 49.0], [-94.6, 49.4]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-95.31, 48.91], "label": "WARROAD, MN", "showAt": 0.1 },
+        { "lonlat": [-95.06, 49.35], "label": "ANGLE INLET", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[-95.31, 48.91], [-95.15, 49.35], [-95.06, 49.35]], "dashed": true, "showAt": 0.15, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat5_phone_booth",
+      "voText": "There's no border agent. Locals use an honor-system phone booth to call in and self-report when they cross back into the US.",
+      "onScreenText": "An honor-system phone booth.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US"],
+      "camera": { "from": [[-95.4, 49.0], [-94.6, 49.4]], "to": [[-95.25, 49.3], [-94.9, 49.4]], "pad": 130 },
+      "markers": [
+        { "lonlat": [-95.06, 49.35], "label": "JIM'S CORNER", "emoji": "☎️", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One inaccurate line on a 1783 map, and Americans still cross an international border twice just to reach their own state. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["US"],
+      "camera": { "from": [[-95.25, 49.3], [-94.9, 49.4]], "to": [[-125, 24], [-66, 55]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
