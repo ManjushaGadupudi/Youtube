@@ -183,6 +183,41 @@ ${D3_BUNDLE}
   function lerpLog(a, b, t) { return Math.exp(lerp(Math.log(a), Math.log(b), t)); }
   function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
 
+  // Truncate an already-projected [x,y] polyline to the given fraction of
+  // its total pixel length, interpolating the cut point -- used for the
+  // line "draw-on" reveal. (Deliberately NOT using SVG pathLength-relative
+  // dashoffset: that unit system fights with a real, small-px dash pattern
+  // for the "dashed" visual style, so the two effects are kept separate.)
+  function truncateByFraction(pts, frac) {
+    if (pts.length < 2 || frac <= 0) return pts.length ? [pts[0]] : [];
+    if (frac >= 1) return pts;
+    const segLens = [];
+    let total = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const l = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+      segLens.push(l);
+      total += l;
+    }
+    const target = total * frac;
+    const out = [pts[0]];
+    let acc = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const segLen = segLens[i - 1];
+      if (acc + segLen < target) {
+        out.push(pts[i]);
+        acc += segLen;
+        continue;
+      }
+      const t = segLen > 0 ? (target - acc) / segLen : 0;
+      out.push([
+        pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * t,
+        pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * t,
+      ]);
+      break;
+    }
+    return out;
+  }
+
   const highlightSel = highlightG.selectAll("path")
     .data(payload.highlight.features)
     .join("path");
@@ -194,8 +229,7 @@ ${D3_BUNDLE}
     .attr("stroke", payload.style.colors.lineColor)
     .attr("stroke-width", 5)
     .attr("stroke-linecap", "round")
-    .attr("stroke-dasharray", (d) => (d.dashed ? "14 12" : "none"))
-    .attr("pathLength", 1)
+    .attr("stroke-dasharray", (d) => (d.dashed ? "14 10" : null))
     .attr("opacity", 0);
 
   const markerSel = markersG.selectAll("g")
@@ -239,14 +273,15 @@ ${D3_BUNDLE}
     highlightSel.attr("d", (d) => path(d));
 
     lineSel
-      .attr("d", (d) => path({ type: "LineString", coordinates: d.points }))
-      .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0))
-      .attr("stroke-dashoffset", (d) => {
+      .attr("d", function (d) {
+        const projPts = d.points.map((p) => projection(p)).filter(Boolean);
         const showAt = d.showAt || 0;
         const drawDur = d.drawDuration || 0.5;
         const localT = Math.min(1, Math.max(0, (rawT - showAt) / drawDur));
-        return 1 - localT;
-      });
+        const truncated = truncateByFraction(projPts, localT);
+        return truncated.length > 1 ? d3.line()(truncated) : null;
+      })
+      .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0));
 
     markerSel
       .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0))

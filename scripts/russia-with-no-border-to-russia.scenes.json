@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Russia Has a Piece of Land With No Border to Russia",
+    "sourceScript": "scripts/russia-with-no-border-to-russia.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV, so scene animation timing always matches the real VO instead of a guessed fixed duration."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This is Russian territory. It shares no land border with the rest of Russia, the closest Russian soil is over two hundred miles away.",
+      "onScreenText": "200 miles from the rest of Russia.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["RU"],
+      "camera": { "from": [[10, 48], [45, 60]], "to": [[16, 52], [36, 58]], "pad": 90 },
+      "markers": [],
+      "lines": [
+        { "points": [[37.6173, 55.7558], [20.5, 54.71]], "dashed": true, "showAt": 0.28, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called Kaliningrad, wedged between Poland and Lithuania, on the Baltic Sea, completely cut off from mainland Russia by land.",
+      "onScreenText": "Squeezed between two other countries.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["RU"],
+      "camera": { "from": [[16, 52], [36, 58]], "to": [[18.3, 53.2], [23.8, 56.1]], "pad": 100 },
+      "markers": [
+        { "lonlat": [19.2, 52.3], "label": "POLAND", "showAt": 0.35 },
+        { "lonlat": [24.5, 55.6], "label": "LITHUANIA", "showAt": 0.45 },
+        { "lonlat": [20.9, 54.95], "label": "KALININGRAD", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_history",
+      "voText": "Before World War Two, this was German territory, the city of Konigsberg. The Soviet Union kept it after the war, and never gave it back.",
+      "onScreenText": "Once German. Never returned.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["RU"],
+      "camera": { "from": [[18.3, 53.2], [23.8, 56.1]], "to": [[19.0, 53.9], [22.2, 55.6]], "pad": 110 },
+      "markers": [
+        { "lonlat": [20.51, 54.71], "label": "KONIGSBERG -> KALININGRAD", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_port",
+      "voText": "Today it's Russia's only Baltic Sea port that never freezes, which makes it one of the most strategically important pieces of land Russia owns.",
+      "onScreenText": "Russia's only ice-free Baltic port.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["RU"],
+      "camera": { "from": [[19.0, 53.9], [22.2, 55.6]], "to": [[19.6, 54.3], [21.4, 55.05]], "pad": 120 },
+      "markers": [
+        { "lonlat": [20.48, 54.70], "label": "ICE-FREE PORT", "emoji": "⚓", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "To reach it by land from Moscow, Russian citizens once needed special transit documents just to cross through Lithuania's territory.",
+      "onScreenText": "A passport. To cross to your own city.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["RU"],
+      "camera": { "from": [[16, 50], [40, 60]], "to": [[17, 51], [39, 59]], "pad": 90 },
+      "markers": [
+        { "lonlat": [37.6173, 55.7558], "label": "MOSCOW", "showAt": 0.08 },
+        { "lonlat": [20.5, 54.71], "label": "KALININGRAD", "showAt": 0.08 },
+        { "lonlat": [25.28, 54.69], "label": "TRANSIT DOCUMENT REQUIRED", "emoji": "🛂", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[37.6173, 55.7558], [25.28, 54.69], [20.5, 54.71]], "dashed": true, "showAt": 0.18, "drawDuration": 0.68 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One country, one exclave, two hundred miles of foreign land in between, and it's still one of Russia's most valuable ports. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["RU"],
+      "camera": { "from": [[17, 51], [39, 59]], "to": [[10, 47], [45, 61]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
