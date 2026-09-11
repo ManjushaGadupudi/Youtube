@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Someone Built a Country on an Abandoned Sea Fort",
+    "sourceScript": "scripts/country-on-a-sea-fort.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note_not_a_country": "Sealand is not a recognized sovereign state and has no polygon in world-atlas -- per README's 'Scenes that aren't a country' convention, highlight is left empty throughout and a gold marker + tiny hand-drawn platform outline at Roughs Tower's real coordinates (51.895 N, 1.4805 E, ~7nmi off the Suffolk/Essex coast) stands in for it."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "In 1967, a man sailed out to an abandoned World War Two anti-aircraft platform in the North Sea, climbed aboard, and declared it a country.",
+      "onScreenText": "He declared it a country.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-2, 50.5], [4, 54.5]], "to": [[0.7, 51.55], [2.3, 52.25]], "pad": 100 },
+      "markers": [
+        { "lonlat": [1.4805, 51.895], "label": "ROUGHS TOWER", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[1.28, 51.72], [1.4805, 51.895]], "dashed": true, "showAt": 0.05, "drawDuration": 0.55 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called the Principality of Sealand, a concrete platform the size of two tennis courts, 7 miles off the English coast.",
+      "onScreenText": "The size of two tennis courts.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[0.7, 51.55], [2.3, 52.25]], "to": [[1.0, 51.65], [1.9, 52.1]], "pad": 110 },
+      "markers": [
+        { "lonlat": [1.15, 51.95], "label": "ENGLAND", "showAt": 0.3 },
+        { "lonlat": [1.4805, 51.895], "label": "SEALAND", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[1.05, 51.94], [1.4805, 51.895]], "dashed": true, "showAt": 0.05, "drawDuration": 0.4 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "And it plays the part completely: Sealand has its own flag, its own currency, and its own passports, all issued from that one platform.",
+      "onScreenText": "Its own flag. Currency. Passports.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[1.0, 51.65], [1.9, 52.1]], "to": [[1.35, 51.83], [1.61, 51.96]], "pad": 120 },
+      "markers": [
+        { "lonlat": [1.4805, 51.895], "label": "SEALAND", "emoji": "🏴", "showAt": 0.15 },
+        { "lonlat": [1.53, 51.92], "label": "PASSPORT", "emoji": "🛂", "showAt": 0.45 },
+        { "lonlat": [1.44, 51.87], "label": "CURRENCY", "emoji": "🪙", "showAt": 0.65 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "It even has a royal family. The Bates family has ruled Sealand for generations, surviving coup attempts, a fire, and decades on their own.",
+      "onScreenText": "A royal family. On a platform.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[1.35, 51.83], [1.61, 51.96]], "to": [[1.42, 51.865], [1.54, 51.925]], "pad": 130 },
+      "markers": [
+        { "lonlat": [1.4805, 51.895], "label": "HOUSE OF BATES", "emoji": "👑", "showAt": 0.2 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "No country on Earth formally recognizes Sealand as a nation. But in nearly 60 years, no country has managed to shut it down either.",
+      "onScreenText": "Unrecognized. Unremovable.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[1.42, 51.865], [1.54, 51.925]], "to": [[1.45, 51.878], [1.51, 51.912]], "pad": 140 },
+      "markers": [
+        { "lonlat": [1.4805, 51.895], "label": "SEALAND", "showAt": 0.1 }
+      ],
+      "lines": [
+        { "points": [[1.4775, 51.893], [1.4775, 51.897], [1.4835, 51.897], [1.4835, 51.893], [1.4775, 51.893]], "dashed": false, "showAt": 0.0, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One abandoned fort, one declared nation, nearly 60 years of surviving on a concrete platform in the middle of the sea. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[1.45, 51.878], [1.51, 51.912]], "to": [[-2, 50.5], [4, 54.5]], "pad": 100 },
+      "markers": [
+        { "lonlat": [1.4805, 51.895], "label": "SEALAND", "showAt": 0.0 }
+      ],
+      "lines": []
+    }
+  ]
+}

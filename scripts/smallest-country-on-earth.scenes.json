@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "The Smallest Country on Earth Is Smaller Than Most Parks",
+    "sourceScript": "scripts/smallest-country-on-earth.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note_no_highlight": "Vatican City (VA) is a real ISO code but is NOT present as a polygon in world-atlas's 110m-resolution countries topology (too small to survive that simplification, like several other micro-states) -- confirmed empirically against node_modules/world-atlas/countries-110m.json. Treated like the README's 'scenes that aren't a country' pattern: highlight is left empty and a hand-drawn small rectangle in `lines` (approximating VA's real ~44-hectare footprint) stands in for the border outline, using the same gold lineColor as the highlight stroke."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This entire country is 0.17 square miles. You could walk across the whole thing, border to border, in about fifteen minutes.",
+      "onScreenText": "0.17 square miles. Whole country.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[8, 40.2], [16, 43.8]], "to": [[12.30, 41.78], [12.65, 42.02]], "pad": 100 },
+      "markers": [
+        { "lonlat": [12.4534, 41.9029], "label": "VATICAN CITY", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.6, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Vatican City, the smallest sovereign state on Earth, sitting entirely inside the city of Rome, surrounded on every side by Italy.",
+      "onScreenText": "Smaller than most city parks.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.30, 41.78], [12.65, 42.02]], "to": [[12.40, 41.875], [12.52, 41.935]], "pad": 110 },
+      "markers": [
+        { "lonlat": [12.4964, 41.9028], "label": "ROME, ITALY", "showAt": 0.4 },
+        { "lonlat": [12.4534, 41.9029], "label": "VATICAN CITY", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.1, "drawDuration": 0.4 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "Fewer than 1,000 people live there, and yet it has its own train station, its own postal service, and its own postage stamps.",
+      "onScreenText": "Its own trains. Its own stamps.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.40, 41.875], [12.52, 41.935]], "to": [[12.4405, 41.895], [12.4665, 41.911]], "pad": 120 },
+      "markers": [
+        { "lonlat": [12.4472, 41.9004], "label": "TRAIN STATION", "emoji": "🚉", "showAt": 0.35 },
+        { "lonlat": [12.4553, 41.9042], "label": "POST OFFICE", "emoji": "✉️", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "It even has its own army: the Swiss Guard, founded in 1506, the oldest continuously operating military unit anywhere in the world.",
+      "onScreenText": "The world's oldest standing army.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.4405, 41.895], [12.4665, 41.911]], "to": [[12.445, 41.8985], [12.462, 41.9075]], "pad": 130 },
+      "markers": [
+        { "lonlat": [12.4534, 41.9029], "label": "SWISS GUARD · EST. 1506", "emoji": "🛡️", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.02, "drawDuration": 0.25 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Despite the size, it's a fully sovereign nation, recognized around the world, a real country, with real borders, smaller than most parking lots.",
+      "onScreenText": "Fully sovereign. Fully real.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.445, 41.8985], [12.462, 41.9075]], "to": [[12.4455, 41.899], [12.4615, 41.907]], "pad": 140 },
+      "markers": [
+        { "lonlat": [12.4534, 41.9029], "label": "VATICAN CITY", "showAt": 0.15 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One square-ish block, one entire country, one army older than most nations themselves. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[12.4455, 41.899], [12.4615, 41.907]], "to": [[8, 40.2], [16, 43.8]], "pad": 100 },
+      "markers": [
+        { "lonlat": [12.4534, 41.9029], "label": "VATICAN CITY", "showAt": 0.0 }
+      ],
+      "lines": [
+        { "points": [[12.4457, 41.9006], [12.4457, 41.9075], [12.4583, 41.9075], [12.4583, 41.9006], [12.4457, 41.9006]], "dashed": false, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    }
+  ]
+}

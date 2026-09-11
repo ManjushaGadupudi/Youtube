@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Two Countries Share One Room — Literally",
+    "sourceScript": "scripts/panmunjom-shared-conference-room.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV. JSA/Panmunjom is a specific building, not a country polygon, so `highlight` stays [] throughout; North/South Korea and the demarcation line are carried by markers/lines instead, per pipeline/README.md 'Scenes that aren't a country'."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "Walk into this building, and you can stand in North Korea and South Korea in the very same room.",
+      "onScreenText": "Stand in two countries at once.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[124, 33], [131, 43]], "to": [[126.3, 37.7], [127.1, 38.25]], "pad": 100 },
+      "markers": [
+        { "lonlat": [126.6772, 37.9539], "label": "PANMUNJOM", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Panmunjom, the Joint Security Area inside the Korean DMZ, the one spot where both militaries stand face to face.",
+      "onScreenText": "The Joint Security Area.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[126.3, 37.7], [127.1, 38.25]], "to": [[126.55, 37.85], [126.8, 38.05]], "pad": 100 },
+      "markers": [
+        { "lonlat": [126.75, 38.2], "label": "NORTH KOREA", "showAt": 0.15 },
+        { "lonlat": [126.75, 37.7], "label": "SOUTH KOREA", "showAt": 0.22 },
+        { "lonlat": [126.6772, 37.9539], "label": "JOINT SECURITY AREA", "showAt": 0.45 }
+      ],
+      "lines": [
+        { "points": [[126.55, 37.953], [126.8, 37.953]], "dashed": true, "showAt": 0.2, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat3_line_through_table",
+      "voText": "Inside the blue conference huts, the Military Demarcation Line runs directly across the meeting table, splitting it exactly in half.",
+      "onScreenText": "The line splits the table.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[126.55, 37.85], [126.8, 38.05]], "to": [[126.65, 37.93], [126.71, 37.98]], "pad": 130 },
+      "markers": [
+        { "lonlat": [126.6772, 37.9539], "label": "MAC CONFERENCE ROOM", "emoji": "🏠", "showAt": 0.15 }
+      ],
+      "lines": [
+        { "points": [[126.66, 37.9539], [126.695, 37.9539]], "dashed": false, "showAt": 0.35, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat4_step_across",
+      "voText": "Step to the wrong side of that table, and you've technically crossed an international border without ever leaving the room.",
+      "onScreenText": "One step, one border.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[126.65, 37.93], [126.71, 37.98]], "to": [[126.655, 37.945], [126.705, 37.965]], "pad": 130 },
+      "markers": [
+        { "lonlat": [126.6772, 37.9539], "label": "MDL RUNS THROUGH IT", "emoji": "🚶", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[126.66, 37.9539], [126.695, 37.9539]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat5_still_at_war",
+      "voText": "North and South Korea never signed a peace treaty. The 1953 armistice only paused the war, this room sits on a frozen frontline.",
+      "onScreenText": "Still technically at war.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[126.655, 37.945], [126.705, 37.965]], "to": [[126.35, 37.72], [127.05, 38.2]], "pad": 100 },
+      "markers": [
+        { "lonlat": [126.6772, 38.15], "label": "NORTH KOREA", "showAt": 0.1 },
+        { "lonlat": [126.6772, 37.78], "label": "SOUTH KOREA", "showAt": 0.15 },
+        { "lonlat": [126.6772, 37.9539], "label": "ARMISTICE, NOT PEACE", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[126.35, 37.953], [127.05, 37.953]], "dashed": true, "showAt": 0.2, "drawDuration": 0.55 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One room, one table, two countries technically still at war, and tourists can stand on either side of the line. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[126.35, 37.72], [127.05, 38.2]], "to": [[124, 33], [131, 43]], "pad": 90 },
+      "markers": [
+        { "lonlat": [126.6772, 37.9539], "label": "PANMUNJOM", "showAt": 0.1 }
+      ],
+      "lines": [
+        { "points": [[124.5, 37.953], [130.5, 37.953]], "dashed": true, "showAt": 0.1, "drawDuration": 0.6 }
+      ]
+    }
+  ]
+}
