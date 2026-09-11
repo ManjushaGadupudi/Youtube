@@ -40,7 +40,11 @@ function alpha2ToNumericId(code) {
   if (id === undefined) {
     throw new Error(`Unknown country code "${code}" -- add it to maps/country-codes.json`);
   }
-  return String(id);
+  // world-atlas topology ids are zero-padded 3-digit ISO 3166-1 numeric
+  // strings (e.g. Azerbaijan is "031", not "31") -- pad so 1-2 digit
+  // numeric codes (Andorra, Armenia, Azerbaijan, Austria, Belgium,
+  // Australia, Brazil, Argentina, ...) still match.
+  return String(id).padStart(3, "0");
 }
 
 /** Compute {scale, translate} for a lon/lat bbox via a real d3 fitExtent, so
