@@ -29,13 +29,17 @@
   },
 
   "tts": {
-    "engine": "espeak-ng",
-    "_note_piper": "piper-tts was installed and IS the preferred engine, but its voice models are hosted on huggingface.co, which this sandbox's egress policy blocks (403 on CONNECT to huggingface.co, confirmed via /opt/pw-browsers proxy status). Fell back to espeak-ng, which is fully offline (voice data ships in the apt package, no network at inference time). See pipeline/README.md 'Blockers' section. If a future environment can reach huggingface.co, swap this block to piper (see narrate.py for the piper code path, left in place but unused).",
-    "voice": "en-us",
-    "speed_wpm": 170,
-    "pitch": 38,
-    "amplitude": 100,
-    "gap_ms": 6
+    "engine": "google",
+    "_note_google": "LOCKED primary engine: unofficial Google Translate TTS (translate.googleapis.com/translate_tts). Free, no key, reachable from this sandbox (confirmed), far more natural than espeak-ng. Text >~180 chars is auto-chunked on sentence/clause boundaries and concatenated (see narrate.py:_split_for_google). If this ever stops being reachable, narrate.py automatically falls back to the espeak-ng settings under fallback_espeak below.",
+    "google_tld": "com",
+    "_note_piper": "piper-tts was installed and would be preferred over both Google TTS and espeak-ng, but its voice models are hosted on huggingface.co, which this sandbox's egress policy blocks (403 on CONNECT, confirmed via /opt/pw-browsers proxy status). See pipeline/README.md 'Blockers' section. If a future environment can reach huggingface.co, swap engine to 'piper' (see narrate.py for the piper code path, left in place but unused).",
+    "fallback_espeak": {
+      "voice": "en-us",
+      "speed_wpm": 170,
+      "pitch": 38,
+      "amplitude": 100,
+      "gap_ms": 6
+    }
   },
 
   "captions": {

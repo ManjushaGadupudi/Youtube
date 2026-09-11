@@ -3,10 +3,17 @@
 narrate.py — generate narration WAV for one line of VO text using the
 LOCKED narrator voice defined in config/style.json.
 
-Primary engine (locked): espeak-ng, fully offline, voice data ships in the
-apt package. See config/style.json -> tts._note_piper for why piper-tts
-(the originally preferred engine) is not used: its voice models live on
-huggingface.co, which this sandbox's egress proxy blocks (confirmed 403).
+Primary engine (locked): "google" — the unofficial Google Translate TTS
+endpoint (translate.googleapis.com/translate_tts), reachable from this
+sandbox (confirmed) unlike huggingface.co/speech.platform.bing.com/
+cdn.jsdelivr.net (all confirmed 403). Free, no API key, neural-quality
+voice, en/co.uk accent locked in style.json. The endpoint caps request
+text around ~200 characters, so long lines are split on sentence
+boundaries and the resulting clips concatenated.
+
+Fallback engine: espeak-ng, fully offline (used automatically if the
+network call fails, e.g. a transient block). See config/style.json ->
+tts._note_piper for why piper-tts (originally preferred) isn't used.
 
 Usage:
     python3 narrate.py "Some line of VO text." out.wav
@@ -17,11 +24,18 @@ Always writes a 44.1kHz mono WAV suitable for ffmpeg muxing.
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
+import tempfile
+import urllib.parse
+import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STYLE_PATH = os.path.join(HERE, "config", "style.json")
+GOOGLE_TTS_URL = "https://translate.googleapis.com/translate_tts"
+GOOGLE_TTS_MAX_CHARS = 180  # safety margin under the endpoint's ~200-char cap
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
 
 
 def load_style():
@@ -54,6 +68,80 @@ def synth_espeak(text, out_wav, tts_cfg):
     ]
     subprocess.run(norm_cmd, check=True)
     os.remove(raw_wav)
+
+
+def _split_for_google(text, max_chars=GOOGLE_TTS_MAX_CHARS):
+    """Split text into <=max_chars chunks on sentence, then clause, boundaries."""
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    chunks = []
+    for s in sentences:
+        if len(s) <= max_chars:
+            chunks.append(s)
+            continue
+        # sentence itself too long: split on commas/dashes as a fallback
+        parts = re.split(r"(?<=[,;—-])\s+", s)
+        buf = ""
+        for p in parts:
+            candidate = (buf + " " + p).strip() if buf else p
+            if len(candidate) <= max_chars:
+                buf = candidate
+            else:
+                if buf:
+                    chunks.append(buf)
+                buf = p
+        if buf:
+            chunks.append(buf)
+    return [c for c in chunks if c.strip()]
+
+
+def _fetch_google_clip(text, tld):
+    url = (
+        f"{GOOGLE_TTS_URL}?ie=UTF-8&client=tw-ob&tl=en"
+        f"&q={urllib.parse.quote(text)}"
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        if resp.status != 200:
+            raise RuntimeError(f"google tts HTTP {resp.status}")
+        return resp.read()
+
+
+def synth_google(text, out_wav, tts_cfg):
+    """Primary synth: unofficial Google Translate TTS, chunked + concatenated."""
+    chunks = _split_for_google(text)
+    tld = tts_cfg.get("google_tld", "com")
+    with tempfile.TemporaryDirectory() as td:
+        mp3_paths = []
+        for i, chunk in enumerate(chunks):
+            data = _fetch_google_clip(chunk, tld)
+            mp3_path = os.path.join(td, f"part{i:02d}.mp3")
+            with open(mp3_path, "wb") as f:
+                f.write(data)
+            mp3_paths.append(mp3_path)
+
+        if len(mp3_paths) == 1:
+            concat_input = mp3_paths[0]
+        else:
+            list_path = os.path.join(td, "concat.txt")
+            with open(list_path, "w") as f:
+                for p in mp3_paths:
+                    f.write(f"file '{p}'\n")
+            concat_input = os.path.join(td, "joined.mp3")
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-f", "concat",
+                 "-safe", "0", "-i", list_path, "-c", "copy", concat_input],
+                check=True,
+            )
+
+        norm_cmd = [
+            "ffmpeg", "-y", "-loglevel", "error",
+            "-i", concat_input,
+            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,"
+                   "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.05",
+            "-ar", "44100", "-ac", "1",
+            out_wav,
+        ]
+        subprocess.run(norm_cmd, check=True)
 
 
 def synth_piper(text, out_wav, voice_model_path):
@@ -98,12 +186,19 @@ def main():
     style = load_style()
     tts_cfg = style["tts"]
 
-    if tts_cfg["engine"] == "espeak-ng":
+    engine = tts_cfg["engine"]
+    if engine == "google":
+        try:
+            synth_google(text, args.out_wav, tts_cfg)
+        except Exception as e:
+            print(f"WARNING: google TTS failed ({e}); falling back to espeak-ng", file=sys.stderr)
+            synth_espeak(text, args.out_wav, tts_cfg["fallback_espeak"])
+    elif engine == "espeak-ng":
         synth_espeak(text, args.out_wav, tts_cfg)
-    elif tts_cfg["engine"] == "piper":
+    elif engine == "piper":
         synth_piper(text, args.out_wav, tts_cfg["voice_model_path"])
     else:
-        raise ValueError(f"Unknown tts engine: {tts_cfg['engine']}")
+        raise ValueError(f"Unknown tts engine: {engine}")
 
     dur = get_duration(args.out_wav)
     print(json.dumps({"wav": args.out_wav, "duration_sec": dur}))
