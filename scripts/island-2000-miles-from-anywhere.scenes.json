@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "This Island Is Almost 2,000 Miles From Anywhere",
+    "sourceScript": "scripts/island-2000-miles-from-anywhere.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Easter Island (Rapa Nui) is too remote/small to be part of the Chile polygon in world-atlas's 110m topology (Chile's geometry bounds stop around -66.9 to -75.6 lon, nowhere near the island's -109.35 lon) -- rendered as a gold marker on open ocean. CL highlight used only in beat 2 for mainland-Chile distance context."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This island's nearest inhabited neighbor is over 1,200 miles away. There's more open ocean around it than around almost anywhere else people live.",
+      "onScreenText": "1,200 miles from anyone.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-135, -40], [-65, -10]], "to": [[-118, -33], [-100, -21]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "EASTER ISLAND", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's Easter Island, Rapa Nui, Chilean territory sitting almost 2,300 miles from mainland Chile, across open Pacific Ocean.",
+      "onScreenText": "2,300 miles from mainland Chile.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CL"],
+      "camera": { "from": [[-118, -33], [-100, -21]], "to": [[-112, -30], [-68, -23]], "pad": 80 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "RAPA NUI", "showAt": 0.15 },
+        { "lonlat": [-70.8244, -27.0654], "label": "CHILE", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[-109.3497, -27.1127], [-70.8244, -27.0654]], "dashed": true, "showAt": 0.25, "drawDuration": 0.65 }
+      ]
+    },
+    {
+      "id": "beat3_neighbor",
+      "voText": "Its closest neighbor, Pitcairn Island, is still over 1,200 miles west, making this one of the most isolated inhabited places on Earth.",
+      "onScreenText": "Closest neighbor: Pitcairn Island.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-134, -30], [-104, -22]], "to": [[-130, -29], [-107, -23]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "EASTER ISLAND", "showAt": 0.1 },
+        { "lonlat": [-130.1010, -25.0672], "label": "PITCAIRN ISLAND", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[-109.3497, -27.1127], [-130.1010, -25.0672]], "dashed": true, "showAt": 0.15, "drawDuration": 0.65 }
+      ]
+    },
+    {
+      "id": "beat4_statues",
+      "voText": "Despite the isolation, the island holds nearly 1,000 giant stone moai statues, some standing over 30 feet tall, carved centuries ago.",
+      "onScreenText": "Nearly 1,000 stone statues.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-112, -29], [-106, -25]], "to": [[-109.9, -27.4], [-108.8, -26.8]], "pad": 130 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "~1,000 MOAI STATUES", "emoji": "🗿", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "They were carved and moved without wheels, metal tools, or draft animals, and archaeologists still argue about exactly how it was done.",
+      "onScreenText": "Moved without wheels. Still debated.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-109.9, -27.4], [-108.8, -26.8]], "to": [[-109.7, -27.3], [-109.0, -26.9]], "pad": 140 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "HOW DID THEY MOVE THEM?", "emoji": "🗿", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "Almost 2,000 miles of open ocean in every direction, nearly 1,000 statues, and a mystery nobody's fully solved. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[-109.7, -27.3], [-109.0, -26.9]], "to": [[-135, -40], [-65, -10]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-109.3497, -27.1127], "label": "EASTER ISLAND", "showAt": 0.05 }
+      ],
+      "lines": []
+    }
+  ]
+}

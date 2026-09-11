@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Anyone on Earth Can Move Here Without a Visa",
+    "sourceScript": "scripts/move-here-without-a-visa.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Norway's geometry in world-atlas's 110m topology extends north to ~80.7 lat / ~31.3 lon, which matches Svalbard's real extent (confirmed via d3.geoBounds), so Svalbard renders correctly under highlight: [\"NO\"] -- no marker-only workaround needed for the landmass, unlike San Marino/Easter Island."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "There's a place on Earth where your passport doesn't matter. Any citizen of any country can move here, work here, and live here, no visa required.",
+      "onScreenText": "No visa required. Anyone.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NO"],
+      "camera": { "from": [[-10, 55], [45, 85]], "to": [[8, 76], [36, 81]], "pad": 90 },
+      "markers": [
+        { "lonlat": [15.6267, 78.2232], "label": "SVALBARD", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's Svalbard, a Norwegian archipelago near the North Pole, open to any nationality since a treaty signed back in 1920.",
+      "onScreenText": "Open to anyone since 1920.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NO"],
+      "camera": { "from": [[8, 76], [36, 81]], "to": [[5, 68], [30, 80]], "pad": 90 },
+      "markers": [
+        { "lonlat": [15.6267, 78.2232], "label": "SVALBARD", "showAt": 0.15 },
+        { "lonlat": [18.9553, 69.6492], "label": "NORWAY", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[18.9553, 69.6492], [15.6267, 78.2232]], "dashed": true, "showAt": 0.3, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat3_catch",
+      "voText": "The catch: there's no welfare system for non-Norwegians here, so you need a job and a place to live already lined up before you land.",
+      "onScreenText": "No welfare. Bring a job.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NO"],
+      "camera": { "from": [[8, 76], [36, 81]], "to": [[14.5, 77.9], [17.5, 78.45]], "pad": 110 },
+      "markers": [
+        { "lonlat": [15.6267, 78.2232], "label": "LONGYEARBYEN", "emoji": "💼", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_polarbears",
+      "voText": "Around 2,500 people live here, and polar bears in the surrounding region actually outnumber them, so locals carry rifles outside town.",
+      "onScreenText": "Polar bears outnumber people.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NO"],
+      "camera": { "from": [[14.5, 77.9], [17.5, 78.45]], "to": [[13.5, 77.6], [19, 78.7]], "pad": 100 },
+      "markers": [
+        { "lonlat": [15.6267, 78.2232], "label": "~2,500 PEOPLE", "emoji": "🐻‍❄️", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Buried in a mountain nearby is the Global Seed Vault, backup seeds from nearly every country on Earth, built to survive a global catastrophe.",
+      "onScreenText": "Backup seeds for the whole planet.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NO"],
+      "camera": { "from": [[13.5, 77.6], [19, 78.7]], "to": [[15.2, 78.15], [16.0, 78.3]], "pad": 130 },
+      "markers": [
+        { "lonlat": [15.4913, 78.2361], "label": "GLOBAL SEED VAULT", "emoji": "🌱", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "No visa, polar bears outnumbering people, and the planet's backup seed supply buried underground. This Arctic archipelago has it all. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["NO"],
+      "camera": { "from": [[15.2, 78.15], [16.0, 78.3]], "to": [[-10, 55], [45, 85]], "pad": 90 },
+      "markers": [
+        { "lonlat": [15.6267, 78.2232], "label": "SVALBARD", "showAt": 0.05 }
+      ],
+      "lines": []
+    }
+  ]
+}
