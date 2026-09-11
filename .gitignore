@@ -1,0 +1,13 @@
+# Local video pipeline — dependencies and generated artifacts, not source
+pipeline/node_modules/
+pipeline/venv/
+pipeline/.venv/
+pipeline/**/__pycache__/
+pipeline/models/
+pipeline/voices/
+pipeline/*.onnx
+pipeline/output/
+pipeline/tmp/
+pipeline/**/*.wav
+pipeline/**/*.mp4
+pipeline/**/*.webm

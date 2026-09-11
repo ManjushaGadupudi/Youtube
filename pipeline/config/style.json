@@ -1,0 +1,48 @@
+{
+  "_comment": "LOCKED visual + audio identity for the local render pipeline. Every future scene/video MUST reuse these exact values byte-for-byte — do not drift per-video. If a value here ever needs to change, change it once here and re-render, don't override it in a scene spec.",
+
+  "colors": {
+    "water": "#3A6EA5",
+    "land": "#74A35D",
+    "highlight": "#D4A72C",
+    "highlightStroke": "#F2CF6B",
+    "background": "#0B1E33",
+    "countryBorder": "#1F3A2E",
+    "onScreenTextColor": "#FFFFFF",
+    "onScreenTextShadow": "#00000099",
+    "captionText": "#FFFFFF",
+    "captionOutline": "#000000",
+    "markerFill": "#D4A72C",
+    "markerText": "#FFFFFF",
+    "lineColor": "#F2CF6B"
+  },
+
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+
+  "fonts": {
+    "onScreenTextFamily": "Liberation Sans, Arial, Helvetica, sans-serif",
+    "captionFamily": "Liberation Sans"
+  },
+
+  "tts": {
+    "engine": "espeak-ng",
+    "_note_piper": "piper-tts was installed and IS the preferred engine, but its voice models are hosted on huggingface.co, which this sandbox's egress policy blocks (403 on CONNECT to huggingface.co, confirmed via /opt/pw-browsers proxy status). Fell back to espeak-ng, which is fully offline (voice data ships in the apt package, no network at inference time). See pipeline/README.md 'Blockers' section. If a future environment can reach huggingface.co, swap this block to piper (see narrate.py for the piper code path, left in place but unused).",
+    "voice": "en-us",
+    "speed_wpm": 170,
+    "pitch": 38,
+    "amplitude": 100,
+    "gap_ms": 6
+  },
+
+  "captions": {
+    "method": "even_time_slicing",
+    "_note_whisper": "faster-whisper was installed and IS the preferred captioning method, but its model weights are also fetched from huggingface.co (and the openaipublic.azureedge.net mirror is blocked too, same proxy policy, confirmed 403). Fell back to evenly distributing the KNOWN script words across the measured narration audio duration. This is not true forced-alignment so timing can drift slightly on longer pauses/punctuation, but is deterministic, offline, and close enough for a calm, evenly-paced narrator reading pre-tuned ~20-word lines.",
+    "words_per_chunk": 3,
+    "fontSizePx": 64,
+    "marginBottomPx": 260
+  }
+}
