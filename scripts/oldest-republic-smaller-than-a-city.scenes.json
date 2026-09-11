@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "The World's Oldest Republic Is Smaller Than Most Cities",
+    "sourceScript": "scripts/oldest-republic-smaller-than-a-city.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "San Marino (674) is too small to appear as its own polygon at the pipeline's 110m map resolution (confirmed absent from world-atlas countries-110m.json), so highlight stays empty every beat and a gold marker on Mount Titano stands in for it, same convention used for Transnistria/Nagorno-Karabakh."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This country was founded in the year 301. It has outlasted the fall of Rome, the Renaissance, and every empire that came after.",
+      "onScreenText": "Founded in the year 301.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[7, 37], [19, 47]], "to": [[12.15, 43.7], [12.65, 44.05]], "pad": 100 },
+      "markers": [
+        { "lonlat": [12.4578, 43.9424], "label": "SAN MARINO", "showAt": 0.6 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called San Marino, a mountain republic completely surrounded by Italy, and never conquered in over 1,700 years of existing.",
+      "onScreenText": "Surrounded by Italy. Never conquered.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.15, 43.7], [12.65, 44.05]], "to": [[12.2, 43.82], [12.6, 44.03]], "pad": 110 },
+      "markers": [
+        { "lonlat": [12.4578, 43.9424], "label": "SAN MARINO", "showAt": 0.2 },
+        { "lonlat": [12.05, 43.78], "label": "ITALY", "showAt": 0.5 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_oldest",
+      "voText": "San Marino calls itself the oldest continuously sovereign state on Earth, older than the Vatican, older than every modern nation.",
+      "onScreenText": "The oldest republic on Earth.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.2, 43.82], [12.6, 44.03]], "to": [[12.28, 43.87], [12.55, 44.0]], "pad": 120 },
+      "markers": [
+        { "lonlat": [12.4578, 43.9424], "label": "OLDEST REPUBLIC ON EARTH", "emoji": "🏛️", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_constitution",
+      "voText": "Its constitution was written in 1600, and parts of it are technically still in force today, one of the oldest governing documents in use.",
+      "onScreenText": "A 1600 constitution. Still in force.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.28, 43.87], [12.55, 44.0]], "to": [[12.3, 43.88], [12.52, 43.98]], "pad": 120 },
+      "markers": [
+        { "lonlat": [12.4467, 43.936], "label": "CONSTITUTION OF 1600", "emoji": "📜", "showAt": 0.3 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "With around 33,000 people, San Marino somehow has more registered cars than residents, one of the highest car-to-person ratios on Earth.",
+      "onScreenText": "More cars than people.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[12.3, 43.88], [12.52, 43.98]], "to": [[12.32, 43.89], [12.5, 43.97]], "pad": 130 },
+      "markers": [
+        { "lonlat": [12.4578, 43.9424], "label": "MORE CARS THAN PEOPLE", "emoji": "🚗", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One mountaintop, 1,700 years, and never a single conqueror. The oldest republic on Earth is barely the size of a small town. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[12.32, 43.89], [12.5, 43.97]], "to": [[7, 37], [19, 47]], "pad": 100 },
+      "markers": [
+        { "lonlat": [12.4578, 43.9424], "label": "SAN MARINO", "showAt": 0.05 }
+      ],
+      "lines": []
+    }
+  ]
+}
