@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "This Country's Head of State Is the President of France",
+    "sourceScript": "scripts/head-of-state-is-president-of-france.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note_no_highlight": "Andorra (AD) is a real ISO code but, like Vatican City, is NOT present as a polygon in world-atlas's 110m countries topology (confirmed empirically -- too small to survive that simplification). Treated like the README's 'scenes that aren't a country' pattern: highlight is left empty and a hand-drawn rectangle approximating Andorra's real ~1.41-1.79E, 42.43-42.66N footprint stands in for the border outline, using the gold lineColor."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This tiny country has two heads of state at the same time, and one of them isn't even from here.",
+      "onScreenText": "2 heads of state. 1 country.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-10, 35], [10, 50]], "to": [[0.6, 41.9], [2.6, 43.1]], "pad": 100 },
+      "markers": [
+        { "lonlat": [1.5218, 42.5063], "label": "ANDORRA", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.6, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Andorra, tucked into the Pyrenees mountains between France and Spain, home to fewer than 80,000 people.",
+      "onScreenText": "Andorra. Between France and Spain.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[0.6, 41.9], [2.6, 43.1]], "to": [[0.9, 42.1], [2.3, 42.95]], "pad": 100 },
+      "markers": [
+        { "lonlat": [1.6, 42.95], "label": "FRANCE", "showAt": 0.35 },
+        { "lonlat": [1.4, 42.15], "label": "SPAIN", "showAt": 0.45 },
+        { "lonlat": [1.5218, 42.5063], "label": "ANDORRA", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.05, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "It's a co-principality, ruled jointly by two 'princes': the Bishop of Urgell, in Spain, and the President of France, whoever that happens to be.",
+      "onScreenText": "Ruled by a bishop and a president.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[0.9, 42.1], [2.3, 42.95]], "to": [[1.05, 42.28], [2.05, 42.85]], "pad": 100 },
+      "markers": [
+        { "lonlat": [1.463, 42.358], "label": "BISHOP OF URGELL", "emoji": "⛪", "showAt": 0.3 },
+        { "lonlat": [1.6, 42.8], "label": "PRESIDENT OF FRANCE", "emoji": "🇫🇷", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.0, "drawDuration": 0.25 },
+        { "points": [[1.463, 42.358], [1.5218, 42.5063]], "dashed": true, "showAt": 0.3, "drawDuration": 0.2 },
+        { "points": [[1.6, 42.8], [1.5218, 42.5063]], "dashed": true, "showAt": 0.55, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "That means every time France elects a new president, Andorra automatically gets a new co-prince, no vote, no ceremony required there.",
+      "onScreenText": "New French president. New co-prince.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[1.05, 42.28], [2.05, 42.85]], "to": [[1.1, 42.32], [1.95, 42.8]], "pad": 110 },
+      "markers": [
+        { "lonlat": [1.6, 42.75], "label": "ELECTION IN FRANCE", "emoji": "🗳️", "showAt": 0.3 },
+        { "lonlat": [1.5218, 42.5063], "label": "ANDORRA", "emoji": "👑", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 },
+        { "points": [[1.6, 42.75], [1.5218, 42.5063]], "dashed": true, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "This arrangement dates back to 1278, a deal that's never been fully replaced, just quietly kept running for more than 700 years.",
+      "onScreenText": "1278. Still running today.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[1.1, 42.32], [1.95, 42.8]], "to": [[0.85, 42.15], [2.25, 42.9]], "pad": 110 },
+      "markers": [
+        { "lonlat": [1.5218, 42.5063], "label": "ANDORRA · SINCE 1278", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One tiny country, two rulers, one of them a foreign head of state by default, and it's worked for over 700 years. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[0.85, 42.15], [2.25, 42.9]], "to": [[-10, 35], [10, 50]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[1.41, 42.43], [1.41, 42.66], [1.79, 42.66], [1.79, 42.43], [1.41, 42.43]], "dashed": false, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    }
+  ]
+}

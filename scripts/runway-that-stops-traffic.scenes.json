@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "title": "The Airport Runway You Have to Stop Traffic to Use",
+    "sourceScript": "scripts/runway-that-stops-traffic.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV. Gibraltar is too small to be its own polygon in the 110m dataset (it renders as part of the Iberian coastline), so it uses the 'scenes that aren't a country' convention: gold markers + hand-drawn `lines` for the runway (east-west) and Winston Churchill Avenue (north-south) crossing it, near Gibraltar's real coordinates (36.14N, 5.35W)."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This runway crosses the only road in and out of the entire territory. When a plane needs it, the road simply closes.",
+      "onScreenText": "One road. One runway. Same spot.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -9,
+            33
+          ],
+          [
+            3,
+            44
+          ]
+        ],
+        "to": [
+          [
+            -5.6,
+            36.0
+          ],
+          [
+            -5.1,
+            36.3
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [
+        {
+          "lonlat": [
+            -5.3536,
+            36.1408
+          ],
+          "label": "GIBRALTAR",
+          "showAt": 0.5
+        }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Gibraltar's airport, at the northern tip of the territory, its runway intersects Winston Churchill Avenue, the main road connecting Gibraltar to Spain.",
+      "onScreenText": "The road to Spain crosses it.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -5.6,
+            36.0
+          ],
+          [
+            -5.1,
+            36.3
+          ]
+        ],
+        "to": [
+          [
+            -5.45,
+            36.1
+          ],
+          [
+            -5.25,
+            36.2
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [
+        {
+          "lonlat": [
+            -5.3496,
+            36.1513
+          ],
+          "label": "AIRPORT",
+          "emoji": "\u2708\ufe0f",
+          "showAt": 0.4
+        },
+        {
+          "lonlat": [
+            -5.348,
+            36.165
+          ],
+          "label": "SPAIN",
+          "showAt": 0.55
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              -5.365,
+              36.1513
+            ],
+            [
+              -5.335,
+              36.1513
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.5,
+          "drawDuration": 0.3
+        },
+        {
+          "points": [
+            [
+              -5.348,
+              36.165
+            ],
+            [
+              -5.353,
+              36.14
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.6,
+          "drawDuration": 0.3
+        }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "Every time a plane takes off or lands, movable barriers swing shut across the road, and cars simply stop, right in the middle of it.",
+      "onScreenText": "Barriers close. Cars just wait.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -5.45,
+            36.1
+          ],
+          [
+            -5.25,
+            36.2
+          ]
+        ],
+        "to": [
+          [
+            -5.4,
+            36.135
+          ],
+          [
+            -5.3,
+            36.175
+          ]
+        ],
+        "pad": 120
+      },
+      "markers": [
+        {
+          "lonlat": [
+            -5.3496,
+            36.1513
+          ],
+          "label": "BARRIER CROSSING",
+          "emoji": "\ud83d\udea6",
+          "showAt": 0.35
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              -5.365,
+              36.1513
+            ],
+            [
+              -5.335,
+              36.1513
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.2
+        },
+        {
+          "points": [
+            [
+              -5.348,
+              36.165
+            ],
+            [
+              -5.353,
+              36.14
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.0,
+          "drawDuration": 0.2
+        }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "It happens several times a day, every day, pedestrians and drivers treating an active international airport runway like a regular traffic light.",
+      "onScreenText": "Several times. Every single day.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -5.4,
+            36.135
+          ],
+          [
+            -5.3,
+            36.175
+          ]
+        ],
+        "to": [
+          [
+            -5.39,
+            36.14
+          ],
+          [
+            -5.31,
+            36.17
+          ]
+        ],
+        "pad": 130
+      },
+      "markers": [
+        {
+          "lonlat": [
+            -5.3496,
+            36.1513
+          ],
+          "label": "RUNWAY CROSSING",
+          "emoji": "\ud83d\ude97",
+          "showAt": 0.3
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              -5.365,
+              36.1513
+            ],
+            [
+              -5.335,
+              36.1513
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.15
+        },
+        {
+          "points": [
+            [
+              -5.348,
+              36.165
+            ],
+            [
+              -5.353,
+              36.14
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.0,
+          "drawDuration": 0.15
+        }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "In 2023, Gibraltar finally opened a tunnel running underneath the runway, but the road-crossing barriers are still there, and still used constantly.",
+      "onScreenText": "A tunnel now exists. Barriers too.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -5.39,
+            36.14
+          ],
+          [
+            -5.31,
+            36.17
+          ]
+        ],
+        "to": [
+          [
+            -5.4,
+            36.135
+          ],
+          [
+            -5.3,
+            36.175
+          ]
+        ],
+        "pad": 120
+      },
+      "markers": [
+        {
+          "lonlat": [
+            -5.3496,
+            36.1513
+          ],
+          "label": "TUNNEL, 2023",
+          "emoji": "\ud83d\udee3\ufe0f",
+          "showAt": 0.4
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              -5.365,
+              36.1513
+            ],
+            [
+              -5.335,
+              36.1513
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.15
+        },
+        {
+          "points": [
+            [
+              -5.348,
+              36.165
+            ],
+            [
+              -5.353,
+              36.14
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.0,
+          "drawDuration": 0.15
+        },
+        {
+          "points": [
+            [
+              -5.363,
+              36.1495
+            ],
+            [
+              -5.337,
+              36.1495
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.35,
+          "drawDuration": 0.3
+        }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One runway, one road, and a barrier system that turns landing a plane into a full stop for traffic. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more \ud83c\udf0d",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [
+        "ES"
+      ],
+      "camera": {
+        "from": [
+          [
+            -5.4,
+            36.135
+          ],
+          [
+            -5.3,
+            36.175
+          ]
+        ],
+        "to": [
+          [
+            -9,
+            33
+          ],
+          [
+            3,
+            44
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
