@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "There's an 'Island' at Coordinate Zero, Zero -- And It's Not Real",
+    "sourceScript": "scripts/island-at-coordinate-zero-zero.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Null Island is pure ocean at [0,0] with no land and no country polygon at all -- highlight stays [] every beat, per README's 'scenes that aren't a country' pattern. The most literal case in the lineup: nothing here but water, a marker, and (in reality) a buoy."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "Mapping software sometimes shows an island exactly at zero degrees latitude, zero degrees longitude, sitting in open ocean. It's not real.",
+      "onScreenText": "An island at zero, zero.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-16, -12], [16, 16]], "to": [[-3, -3], [3, 3]], "pad": 100 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "0°N, 0°E", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's nicknamed Null Island, what happens when broken location data defaults to that coordinate origin point and gets plotted like a real place.",
+      "onScreenText": "Broken data. Plotted as a place.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-3, -3], [3, 3]], "to": [[-1.2, -1.2], [1.2, 1.2]], "pad": 100 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "NULL ISLAND", "showAt": 0.2 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_distance",
+      "voText": "It sits in the Gulf of Guinea, off West Africa, the nearest real coastline is still hundreds of miles away in every direction.",
+      "onScreenText": "Hundreds of miles from any coast.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-1.2, -1.2], [1.2, 1.2]], "to": [[-9, -7], [9, 9]], "pad": 90 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "NULL ISLAND", "showAt": 0.1 },
+        { "lonlat": [0.0, 5.75], "label": "NEAREST COAST", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[0, 0], [0.0, 5.75]], "dashed": true, "showAt": 0.2, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat4_buoy",
+      "voText": "The only thing actually there is a real scientific buoy, quietly collecting ocean and weather data for researchers.",
+      "onScreenText": "Just a buoy. That's it.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-9, -7], [9, 9]], "to": [[-0.35, -0.35], [0.35, 0.35]], "pad": 130 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "WEATHER BUOY", "emoji": "⚓", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "So many broken records point here that mapmakers gave it its own joke flag, some databases have even listed it with a population.",
+      "onScreenText": "Its own flag. A fake population.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[-0.35, -0.35], [0.35, 0.35]], "to": [[-0.3, -0.3], [0.3, 0.3]], "pad": 140 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "NULL ISLAND", "emoji": "🏴", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "No land, no people, just a coordinate, a buoy, and a running joke among mapmakers everywhere. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[-0.3, -0.3], [0.3, 0.3]], "to": [[-16, -12], [16, 16]], "pad": 100 },
+      "markers": [
+        { "lonlat": [0, 0], "label": "NULL ISLAND", "showAt": 0.05 }
+      ],
+      "lines": []
+    }
+  ]
+}
