@@ -58,7 +58,7 @@ VO: "One country moved the actual date line just to share a calendar with itself
 
 ## VISUAL STYLE DIRECTION (continue established look)
 - Same blue-water / green-land base palette; Kiribati's islands are too small for the 110m map dataset to render as country polygons, so the entire "gold = subject" language comes from markers and the animated date-line, per the pipeline's "scenes that aren't a country" pattern.
-- Camera bboxes for beats spanning the antimeridian use a single continuous longitude convention (values above 180° standing in for the Line Islands' true negative longitude) so the pan doesn't wrap — consistent within each beat, invisible to the viewer.
+- No single camera bbox ever crosses the antimeridian (confirmed by testing that d3-geo's fitExtent normalizes longitude and breaks otherwise) — Gilbert Islands beats stay on the positive-longitude side, Line Islands beats stay on the negative side, cutting between them like any other beat transition; markers/lines use true real-world longitude throughout since point projection (unlike the camera's bounds fit) handles that correctly on its own.
 
 ## PRODUCTION NOTES
 - Local zero-cost pipeline: D3 map render + Google TTS narration + burned captions, same locked style key as every other video in the lineup — no per-video visual changes.

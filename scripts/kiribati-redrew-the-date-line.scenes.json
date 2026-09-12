@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Country Redrew the Map So It Could Share One Calendar Day",
     "sourceScript": "scripts/kiribati-redrew-the-date-line.md",
-    "_convention": "Duration omitted per beat -- filled from measured narration length. Kiribati (KI) is in country-codes.json but is NOT present in the world-atlas 110m countries dataset (confirmed by direct node lookup against countries-110m.json), so highlight stays [] throughout -- markers/lines carry the whole visual, per the 'scenes that aren't a country' pattern. IMPORTANT longitude convention: beats spanning the antimeridian (crossing 180 degrees) use a single CONTINUOUS longitude scale where the Line Islands' true negative longitude (e.g. -157.4) is written as +202.6 (i.e. +360) instead, for BOTH camera bbox and markers/lines within that beat, so d3.geoMercator's raw (non-wrapping) projection renders them in the correct visual position without the camera box needing west>east wraparound math. Real-world reference: Tarawa/Gilbert Islands ~172.98E,1.33N; old date line ran along 180 degrees; Kiritimati (Christmas Island) ~-157.4,1.87N (=202.6 continuous); Millennium/Caroline Island ~-150.2,-9.94 (=209.8 continuous, first land on Earth to see each new day)."
+    "_convention": "Duration omitted per beat -- filled from measured narration length. Kiribati (KI) is in country-codes.json but is NOT present in the world-atlas 110m countries dataset (confirmed by direct node lookup against countries-110m.json), so highlight stays [] throughout -- markers/lines carry the whole visual, per the 'scenes that aren't a country' pattern. IMPORTANT (verified empirically against fitBBoxProjection): d3-geo's fitExtent/bounds math NORMALIZES any longitude outside -180..180 back into that range before computing the ring's winding/area, so a camera bbox that crosses the antimeridian (east<west after normalization, e.g. [172,-10]-[212,10], OR the plain west>east form [172,-10]-[-157,10]) collapses to a broken whole-world scale, NOT a tight regional crop -- confirmed by direct fitBBoxProjection() calls returning scale~140 (whole-world) instead of a real crop for both forms. There is no continuous-longitude workaround: every beat's camera.from/camera.to here therefore stays strictly on ONE side of +/-180 (Gilbert Islands beats use positive lon up to 179.9; Line Islands beats use negative lon from -179.9), while markers/lines use TRUE unmodified real-world lon/lat (e.g. Kiritimati stays -157.4, not +202.6) -- point projection (unlike fitExtent's bounds calc) normalizes correctly on its own, confirmed via direct d3-geo projection calls, so markers always land in their correct real position under whichever one-sided camera is active. Real-world reference: Tarawa/Gilbert Islands ~172.98E,1.33N; old date line ran along 180 degrees; Kiritimati (Christmas Island) ~-157.4,1.87N; Millennium/Caroline Island ~-150.2,-9.94 (first land on Earth to see each new day)."
   },
   "beats": [
     {
@@ -11,10 +11,9 @@
       "onScreenText": "Split by its own calendar.",
       "onScreenTextShowAt": 0.12,
       "highlight": [],
-      "camera": { "from": [[145, -20], [220, 20]], "to": [[150, -15], [215, 15]], "pad": 100 },
+      "camera": { "from": [[130, -30], [178, 25]], "to": [[150, -15], [178, 15]], "pad": 100 },
       "markers": [
-        { "lonlat": [172.98, 1.33], "label": "KIRIBATI", "showAt": 0.35 },
-        { "lonlat": [202.6, 1.87], "label": "KIRIBATI", "showAt": 0.55 }
+        { "lonlat": [172.98, 1.33], "label": "KIRIBATI", "showAt": 0.45 }
       ],
       "lines": []
     },
@@ -24,10 +23,10 @@
       "onScreenText": "Islands 1,000+ miles apart.",
       "onScreenTextShowAt": 0.12,
       "highlight": [],
-      "camera": { "from": [[150, -15], [215, 15]], "to": [[166, -4], [180, 6]], "pad": 100 },
+      "camera": { "from": [[150, -15], [178, 15]], "to": [[168, -4], [178, 6]], "pad": 100 },
       "markers": [
         { "lonlat": [172.98, 1.33], "label": "TARAWA, KIRIBATI", "showAt": 0.4 },
-        { "lonlat": [179.5, 4.0], "label": "LINE ISLANDS, 2,000 MI EAST", "showAt": 0.65 }
+        { "lonlat": [177.5, 4.2], "label": "REST OF KIRIBATI, 2,000 MI EAST", "showAt": 0.65 }
       ],
       "lines": []
     },
@@ -37,13 +36,13 @@
       "onScreenText": "The date line cut it in half.",
       "onScreenTextShowAt": 0.12,
       "highlight": [],
-      "camera": { "from": [[166, -4], [180, 6]], "to": [[168, -10], [196, 8]], "pad": 90 },
+      "camera": { "from": [[165, -10], [179.9, 10]], "to": [[168, -8], [179.8, 8]], "pad": 90 },
       "markers": [
-        { "lonlat": [173, -6], "label": "ONE DAY AHEAD", "showAt": 0.4 },
-        { "lonlat": [187, -6], "label": "ONE DAY BEHIND", "showAt": 0.5 }
+        { "lonlat": [172, -5], "label": "ONE DAY AHEAD", "showAt": 0.3 },
+        { "lonlat": [177, 6.5], "label": "OLD DATE LINE", "showAt": 0.55 }
       ],
       "lines": [
-        { "points": [[180, -10], [180, 8]], "dashed": true, "showAt": 0.15, "drawDuration": 0.55 }
+        { "points": [[179.5, -9], [179.5, 9]], "dashed": true, "showAt": 0.15, "drawDuration": 0.5 }
       ]
     },
     {
@@ -52,12 +51,12 @@
       "onScreenText": "Kiribati redrew the map.",
       "onScreenTextShowAt": 0.12,
       "highlight": [],
-      "camera": { "from": [[168, -10], [196, 8]], "to": [[168, -12], [212, 10]], "pad": 90 },
+      "camera": { "from": [[-179.9, -12], [-150, 12]], "to": [[-172, -9], [-152, 9]], "pad": 90 },
       "markers": [
-        { "lonlat": [195, 9], "label": "NEW DATE LINE, 1995", "showAt": 0.5 }
+        { "lonlat": [-165, 8.5], "label": "NEW DATE LINE, 1995", "showAt": 0.5 }
       ],
       "lines": [
-        { "points": [[180, -10], [180, -4], [210, -4], [210, 10], [180, 10]], "dashed": false, "showAt": 0.18, "drawDuration": 0.6 }
+        { "points": [[-179.5, -10], [-179.5, -3], [-151, -3], [-151, 10], [-179.5, 10]], "dashed": false, "showAt": 0.18, "drawDuration": 0.6 }
       ]
     },
     {
@@ -66,10 +65,10 @@
       "onScreenText": "First to see each new day.",
       "onScreenTextShowAt": 0.12,
       "highlight": [],
-      "camera": { "from": [[168, -12], [212, 10]], "to": [[196, -12], [212, 4]], "pad": 110 },
+      "camera": { "from": [[-172, -9], [-152, 9]], "to": [[-165, -12], [-148, 4]], "pad": 110 },
       "markers": [
-        { "lonlat": [202.6, 1.87], "label": "KIRITIMATI", "emoji": "🌅", "showAt": 0.3 },
-        { "lonlat": [209.8, -9.94], "label": "MILLENNIUM ISLAND", "emoji": "🌅", "showAt": 0.5 }
+        { "lonlat": [-157.4, 1.87], "label": "KIRITIMATI", "emoji": "🌅", "showAt": 0.3 },
+        { "lonlat": [-150.2, -9.94], "label": "MILLENNIUM ISLAND", "emoji": "🌅", "showAt": 0.5 }
       ],
       "lines": []
     },
@@ -79,10 +78,12 @@
       "onScreenText": "Follow for more 🌍",
       "onScreenTextShowAt": 0.15,
       "highlight": [],
-      "camera": { "from": [[196, -12], [212, 4]], "to": [[145, -20], [220, 20]], "pad": 90 },
-      "markers": [],
+      "camera": { "from": [[-165, -12], [-148, 4]], "to": [[-179.9, -25], [-140, 25]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-157.4, 1.87], "label": "KIRIBATI", "showAt": 0.15 }
+      ],
       "lines": [
-        { "points": [[180, -10], [180, -4], [210, -4], [210, 10], [180, 10]], "dashed": false, "showAt": 0.1, "drawDuration": 0.5 }
+        { "points": [[-179.5, -10], [-179.5, -3], [-151, -3], [-151, 10], [-179.5, 10]], "dashed": false, "showAt": 0.1, "drawDuration": 0.5 }
       ]
     }
   ]
