@@ -170,13 +170,43 @@ function renderTemplate(payload) {
         <stop offset="0%" stop-color="${c.highlightStroke}"></stop>
         <stop offset="100%" stop-color="${c.highlight}"></stop>
       </linearGradient>
-      <filter id="landShadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"></feDropShadow>
+      <filter id="landShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.45"></feDropShadow>
+        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"></feDropShadow>
       </filter>
       <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
         <feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur>
         <feMerge>
           <feMergeNode in="blur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+      <!-- "Extrude": fakes a raised/pop-up 3D card look for the highlighted
+           country by stacking progressively-less-offset, progressively-
+           lighter flat copies of the shape UNDER the real (gradient-filled)
+           source, like stepped stair risers -- a standard flat-design trick
+           for implying height without true 3D geometry. -->
+      <filter id="extrude" x="-80%" y="-80%" width="260%" height="260%">
+        <feOffset in="SourceGraphic" dx="10" dy="13" result="off1"></feOffset>
+        <feFlood flood-color="${c.landDark}" flood-opacity="1" result="col1"></feFlood>
+        <feComposite in="col1" in2="off1" operator="in" result="step1"></feComposite>
+
+        <feOffset in="SourceGraphic" dx="6.5" dy="8.5" result="off2"></feOffset>
+        <feFlood flood-color="${c.highlight}" flood-opacity="1" result="col2"></feFlood>
+        <feComposite in="col2" in2="off2" operator="in" result="step2"></feComposite>
+
+        <feOffset in="SourceGraphic" dx="3.2" dy="4.2" result="off3"></feOffset>
+        <feFlood flood-color="${c.highlightStroke}" flood-opacity="1" result="col3"></feFlood>
+        <feComposite in="col3" in2="off3" operator="in" result="step3"></feComposite>
+
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="glow"></feGaussianBlur>
+        <feDropShadow in="step1" dx="0" dy="6" stdDeviation="9" flood-color="#000000" flood-opacity="0.5"></feDropShadow>
+
+        <feMerge>
+          <feMergeNode in="step1"></feMergeNode>
+          <feMergeNode in="step2"></feMergeNode>
+          <feMergeNode in="step3"></feMergeNode>
+          <feMergeNode in="glow"></feMergeNode>
           <feMergeNode in="SourceGraphic"></feMergeNode>
         </feMerge>
       </filter>
@@ -186,6 +216,13 @@ function renderTemplate(payload) {
       <filter id="grainFilter" x="0" y="0" width="100%" height="100%">
         <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"></feTurbulence>
         <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0"></feColorMatrix>
+      </filter>
+      <filter id="terrainFilter" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="5" seed="42" stitchTiles="stitch" result="noise"></feTurbulence>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.5 0.5 0.5 0 0"></feColorMatrix>
+        <feComponentTransfer>
+          <feFuncA type="gamma" amplitude="0.16" exponent="2.2" offset="0"></feFuncA>
+        </feComponentTransfer>
       </filter>
       <radialGradient id="vignetteGrad" cx="50%" cy="46%" r="72%">
         <stop offset="55%" stop-color="#000000" stop-opacity="0"></stop>
@@ -199,8 +236,10 @@ function renderTemplate(payload) {
     </defs>
     <rect id="ocean" x="0" y="0" width="${width}" height="${height}" fill="url(#oceanGrad)"></rect>
     <path id="land" fill="url(#landGrad)" filter="url(#landShadow)"></path>
+    <clipPath id="landClip"><use href="#land"></use></clipPath>
+    <rect id="terrain" x="0" y="0" width="${width}" height="${height}" filter="url(#terrainFilter)" clip-path="url(#landClip)" style="mix-blend-mode:multiply"></rect>
     <path id="borders" fill="none" stroke="${c.countryBorder}" stroke-width="1.4" stroke-linejoin="round"></path>
-    <g id="highlight" fill="url(#landGrad)" stroke="url(#highlightGrad)" stroke-width="6" filter="url(#softGlow)"></g>
+    <g id="highlight" fill="url(#landGrad)" stroke="url(#highlightGrad)" stroke-width="6" filter="url(#extrude)"></g>
     <g id="lines"></g>
     <g id="markers"></g>
     <rect id="grade" x="0" y="0" width="${width}" height="${height}" fill="url(#gradeGrad)" style="mix-blend-mode:soft-light"></rect>
