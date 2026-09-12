@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "The One Spot Where Four Countries Almost Meet",
+    "sourceScript": "scripts/kazungula-four-countries-almost-meet.md",
+    "_convention": "Duration omitted per beat -- filled from measured narration length. Verified via WebSearch before scripting: Kazungula quadripoint ~17.793S,25.260E, where the Zambezi and Chobe rivers meet, ~70km west of Livingstone, Zambia; Botswana/Zambia/Zimbabwe/Namibia all converge within meters of each other here (survey consensus is actually two adjacent tripoints, not one true quadripoint -- the beat 5 twist). All four country codes (BW=72, ZM=894, ZW=716, NA=516) confirmed present both in country-codes.json and in the world-atlas 110m dataset by direct node lookup, so highlight is used (unlike the other non-country Day 23-29 topics)."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "Four countries almost touch at this single spot on the Zambezi River, the closest thing on Earth to a true four-country meeting point.",
+      "onScreenText": "Four countries. One point.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[15, -30], [35, -8]], "to": [[23, -20], [28, -15]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "Botswana, Zambia, Zimbabwe, and Namibia all converge here, at Kazungula, where the Zambezi and Chobe rivers meet in southern Africa.",
+      "onScreenText": "Botswana · Zambia · Zimbabwe · Namibia",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[23, -20], [28, -15]], "to": [[24.6, -18.2], [26.0, -17.4]], "pad": 100 },
+      "markers": [
+        { "lonlat": [25.24, -17.88], "label": "BOTSWANA", "showAt": 0.25 },
+        { "lonlat": [25.28, -17.72], "label": "ZAMBIA", "showAt": 0.32 },
+        { "lonlat": [25.38, -17.80], "label": "ZIMBABWE", "showAt": 0.4 },
+        { "lonlat": [25.13, -17.80], "label": "NAMIBIA", "showAt": 0.48 },
+        { "lonlat": [25.26, -17.793], "label": "KAZUNGULA", "showAt": 0.6 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_survey_dispute",
+      "voText": "International law technically doesn't recognize true quadripoints, so surveyors have argued for decades over exactly which two countries touch in the middle.",
+      "onScreenText": "Surveyors still argue over this.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[24.6, -18.2], [26.0, -17.4]], "to": [[25.05, -17.90], [25.45, -17.65]], "pad": 130 },
+      "markers": [
+        { "lonlat": [25.26, -17.793], "label": "SURVEY DISPUTE", "emoji": "🔍", "showAt": 0.4 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_ferry",
+      "voText": "For decades, a car ferry was the only way to cross between them, travelers could hop borders in minutes, where four nations nearly meet.",
+      "onScreenText": "A ferry between 4 countries.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[25.05, -17.90], [25.45, -17.65]], "to": [[25.12, -17.85], [25.38, -17.72]], "pad": 130 },
+      "markers": [
+        { "lonlat": [25.24, -17.80], "label": "FERRY", "emoji": "⛴️", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[25.16, -17.80], [25.30, -17.80]], "dashed": true, "showAt": 0.2, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat5_bridge_twist",
+      "voText": "In 2021, a new bridge finally replaced the ferry, but the old survey dispute never got resolved, it's really two tripoints, not one true quadripoint.",
+      "onScreenText": "Actually two tripoints, not one.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[25.12, -17.85], [25.38, -17.72]], "to": [[25.14, -17.84], [25.36, -17.73]], "pad": 130 },
+      "markers": [
+        { "lonlat": [25.24, -17.80], "label": "BRIDGE, 2021", "emoji": "🌉", "showAt": 0.15 },
+        { "lonlat": [25.26, -17.79], "label": "TWO TRIPOINTS, NOT ONE", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[25.16, -17.80], [25.30, -17.80]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "Four countries, one river, and a border puzzle surveyors still can't fully agree on. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["BW", "ZM", "ZW", "NA"],
+      "camera": { "from": [[25.14, -17.84], [25.36, -17.73]], "to": [[15, -30], [35, -8]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
