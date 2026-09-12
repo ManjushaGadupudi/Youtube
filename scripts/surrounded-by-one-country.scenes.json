@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "This Country Is Completely Inside Another Country",
+    "sourceScript": "scripts/surrounded-by-one-country.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Re-rendering this one (originally Video #4 / Day 2, produced on the paid Higgsfield pipeline) on the local pipeline instead, because the AI-generated footage showed an incorrect flag on screen. The local pipeline renders real country polygons + real flag emoji, so there's no risk of a hallucinated/incorrect flag graphic."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This country has exactly one neighbor. Not because it's small, because that one neighbor completely surrounds it, on every single side.",
+      "onScreenText": "One country. Zero other neighbors.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["LS"],
+      "camera": { "from": [[10, -38], [40, -18]], "to": [[24, -32], [33, -26]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Lesotho, a mountain kingdom sitting entirely inside the borders of South Africa, the only fully enclosed country in Africa.",
+      "onScreenText": "Lesotho. Fully enclosed.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["LS"],
+      "camera": { "from": [[24, -32], [33, -26]], "to": [[26.3, -30.7], [29.6, -28.4]], "pad": 110 },
+      "markers": [
+        { "lonlat": [24.5, -29], "label": "SOUTH AFRICA", "emoji": "🇿🇦", "showAt": 0.35 },
+        { "lonlat": [28.2, -29.6], "label": "LESOTHO", "emoji": "🇱🇸", "showAt": 0.5 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "It's also one of only three countries on Earth completely surrounded by a single other nation, alongside San Marino and Vatican City.",
+      "onScreenText": "Only 3 countries like this exist.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["LS", "SM", "VA"],
+      "camera": { "from": [[-25, -40], [50, 45]], "to": [[-15, -38], [45, 48]], "pad": 60 },
+      "markers": [
+        { "lonlat": [28.2, -29.6], "label": "LESOTHO", "showAt": 0.15 },
+        { "lonlat": [12.45, 43.94], "label": "SAN MARINO", "showAt": 0.4 },
+        { "lonlat": [12.45, 41.90], "label": "VATICAN CITY", "showAt": 0.6 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "Lesotho sits so high in the mountains that it's the only country on Earth entirely above 1,000 meters in elevation.",
+      "onScreenText": "Entirely above 1,000 meters.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["LS"],
+      "camera": { "from": [[26.3, -30.7], [29.6, -28.4]], "to": [[27.0, -30.3], [28.8, -28.8]], "pad": 120 },
+      "markers": [
+        { "lonlat": [28.6, -29.3], "label": "3,000+ m PEAKS", "emoji": "⛰️", "showAt": 0.4 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "That height means Lesotho exports something South Africa doesn't have enough of, water, piped downhill straight into Johannesburg's taps.",
+      "onScreenText": "It exports water. Downhill.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["LS"],
+      "camera": { "from": [[26.0, -30.5], [29.5, -25.5]], "to": [[26.5, -29.5], [29.0, -26.0]], "pad": 100 },
+      "markers": [
+        { "lonlat": [28.05, -29.3], "label": "HIGHLANDS WATER", "emoji": "💧", "showAt": 0.15 },
+        { "lonlat": [28.05, -26.2], "label": "JOHANNESBURG", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[28.05, -29.3], [28.05, -26.2]], "dashed": false, "showAt": 0.3, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One country, one neighbor, completely surrounded, and still exporting the one thing its giant neighbor needs most. Follow for more countries that shouldn't work, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["LS"],
+      "camera": { "from": [[26.3, -30.7], [29.6, -28.4]], "to": [[10, -38], [40, -18]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
