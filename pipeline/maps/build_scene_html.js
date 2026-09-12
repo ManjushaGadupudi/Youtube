@@ -231,6 +231,12 @@ ${D3_BUNDLE}
   function lerp(a, b, t) { return a + (b - a) * t; }
   function lerpLog(a, b, t) { return Math.exp(lerp(Math.log(a), Math.log(b), t)); }
   function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  // Gentler than cubic: a sine-based ease has much less "slam to a stop" at
+  // t=0/t=1, which matters a lot here because every beat's camera motion
+  // starts and ends AT a beat boundary -- cubic easing made the camera visibly
+  // decelerate to a near-halt right before every cut, then re-accelerate hard
+  // right after, reading as a stutter even when position was continuous.
+  function easeInOutSine(t) { return -(Math.cos(Math.PI * t) - 1) / 2; }
   function easeOutBack(t) {
     const c1 = 1.70158, c3 = c1 + 1;
     return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
@@ -332,7 +338,7 @@ ${D3_BUNDLE}
   function draw(elapsedSec) {
     const dur = payload.duration;
     const rawT = Math.min(1, Math.max(0, elapsedSec / dur));
-    const t = easeInOutCubic(rawT);
+    const t = easeInOutSine(rawT);
     const projection = currentProjection(t);
     const path = d3.geoPath(projection);
 
