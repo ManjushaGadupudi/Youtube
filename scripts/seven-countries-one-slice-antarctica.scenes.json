@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "Seven Countries Claim the Same Slice of Antarctica",
+    "sourceScript": "scripts/seven-countries-one-slice-antarctica.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note_antarctica": "Antarctica (numeric id 010, alpha-2 AQ added to maps/country-codes.json) IS present as a landmass polygon in world-atlas's 110m countries topology (confirmed empirically), so it uses the standard `highlight` convention for the continent itself. The three overlapping national claims (UK/Chile/Argentina) are NOT separate polygons in the dataset -- those are hand-drawn dashed 'wedge' `lines` (two rays from an interior apex point down to two coastal longitudes, per real claim boundaries: UK 20W-80W, Chile 53W-90W, Argentina 25W-74W), following the 'scenes that aren't a country' line-drawing convention layered on top of the real Antarctica landmass. Camera boxes deliberately stay north of -80 latitude to avoid Mercator's polar scale blowup near -90."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "No one owns Antarctica. But seven countries have officially claimed slices of it anyway, and some of those slices overlap completely.",
+      "onScreenText": "No owner. Seven claims anyway.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-100, -80], [100, -50]], "to": [[-95, -76], [-5, -58]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "Each claim is a wedge running from the coast toward the South Pole, like a slice of pie, one country's slice per claim, in theory.",
+      "onScreenText": "Slices of pie, pointing at the Pole.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-95, -76], [-5, -58]], "to": [[-92, -78], [-12, -60]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-30, -76], "label": "TOWARD THE SOUTH POLE", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[-50, -78], [-20, -60]], "dashed": true, "showAt": 0.3, "drawDuration": 0.35 },
+        { "points": [[-50, -78], [-80, -60]], "dashed": true, "showAt": 0.3, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "The UK, Chile, and Argentina all claim the exact same wedge: the Antarctic Peninsula, the part of the continent closest to South America.",
+      "onScreenText": "3 countries. 1 wedge.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-92, -78], [-12, -60]], "to": [[-92, -78], [-15, -59]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-20, -62.5], "label": "UK CLAIM", "showAt": 0.15 },
+        { "lonlat": [-87, -63.5], "label": "CHILE CLAIM", "showAt": 0.4 },
+        { "lonlat": [-49, -68.5], "label": "ARGENTINA CLAIM", "showAt": 0.65 }
+      ],
+      "lines": [
+        { "points": [[-50, -78], [-20, -60]], "dashed": true, "showAt": 0.1, "drawDuration": 0.2 },
+        { "points": [[-50, -78], [-80, -60]], "dashed": true, "showAt": 0.1, "drawDuration": 0.2 },
+        { "points": [[-71.5, -78], [-53, -60]], "dashed": true, "showAt": 0.35, "drawDuration": 0.2 },
+        { "points": [[-71.5, -78], [-90, -60]], "dashed": true, "showAt": 0.35, "drawDuration": 0.2 },
+        { "points": [[-49.5, -78], [-25, -60]], "dashed": true, "showAt": 0.6, "drawDuration": 0.2 },
+        { "points": [[-49.5, -78], [-74, -60]], "dashed": true, "showAt": 0.6, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "Their claims overlap by tens of thousands of square miles, the same ground claimed three separate times, by three separate governments.",
+      "onScreenText": "Same ground. 3 different owners.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-92, -78], [-15, -59]], "to": [[-85, -77], [-40, -61]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-63, -66], "label": "TRIPLE OVERLAP", "showAt": 0.45 }
+      ],
+      "lines": [
+        { "points": [[-50, -78], [-20, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-50, -78], [-80, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-71.5, -78], [-53, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-71.5, -78], [-90, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-49.5, -78], [-25, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-49.5, -78], [-74, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "The 1959 Antarctic Treaty froze every claim in place, no new ones, no enforcing old ones, making this the largest land on Earth with no real owner.",
+      "onScreenText": "Frozen. Literally and legally.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-85, -77], [-40, -61]], "to": [[-95, -78], [-8, -58]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-30, -76], "label": "1959 ANTARCTIC TREATY", "emoji": "🧊", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[-50, -78], [-20, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-50, -78], [-80, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-71.5, -78], [-53, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-71.5, -78], [-90, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-49.5, -78], [-25, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 },
+        { "points": [[-49.5, -78], [-74, -60]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "Seven claims, three of them stacked on the same wedge, and a treaty that just leaves it all in limbo. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["AQ"],
+      "camera": { "from": [[-95, -78], [-8, -58]], "to": [[-100, -80], [100, -50]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}

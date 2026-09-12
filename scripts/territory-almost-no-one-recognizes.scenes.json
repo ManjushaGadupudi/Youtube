@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "The Territory Almost No Country Recognizes",
+    "sourceScript": "scripts/territory-almost-no-one-recognizes.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Nagorno-Karabakh is a region within Azerbaijan, not its own polygon in country-codes.json/world-atlas, so highlight stays [\"AZ\"] for context and a hand-drawn closed `lines` loop approximates the historical NKAO boundary around Stepanakert (39.8288N, 46.7661E), per README's 'scenes that aren't a country' pattern. Kept strictly factual/neutral per the sensitivity note in the .md."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "For decades, this mountainous region sat at the center of one of the world's longest-running territorial disputes, and the line kept moving.",
+      "onScreenText": "A decades-long territorial dispute.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AZ"],
+      "camera": { "from": [[43, 37.5], [51, 42.5]], "to": [[45.9, 39.3], [47.5, 40.3]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[46.35, 40.15], [46.75, 40.15], [47.15, 39.95], [47.25, 39.65], [47.05, 39.35], [46.55, 39.35], [46.15, 39.55], [46.05, 39.85], [46.35, 40.15]], "dashed": true, "showAt": 0.3, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "Nagorno-Karabakh lies within Azerbaijan's internationally recognized borders, but for generations it was home to a majority-Armenian population.",
+      "onScreenText": "Inside Azerbaijan. Majority-Armenian population.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AZ"],
+      "camera": { "from": [[45.9, 39.3], [47.5, 40.3]], "to": [[44.5, 39.0], [48.5, 41.2]], "pad": 90 },
+      "markers": [
+        { "lonlat": [45.0382, 40.0691], "label": "ARMENIA", "showAt": 0.35 },
+        { "lonlat": [46.7661, 39.8288], "label": "NAGORNO-KARABAKH", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[46.35, 40.15], [46.75, 40.15], [47.15, 39.95], [47.25, 39.65], [47.05, 39.35], [46.55, 39.35], [46.15, 39.55], [46.05, 39.85], [46.35, 40.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat3_history",
+      "voText": "After the Soviet Union collapsed, war broke out in the 1990s, leaving the region controlled by a self-declared republic no UN member recognized.",
+      "onScreenText": "A republic no country recognized.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AZ"],
+      "camera": { "from": [[44.5, 39.0], [48.5, 41.2]], "to": [[45.9, 39.3], [47.5, 40.3]], "pad": 100 },
+      "markers": [
+        { "lonlat": [46.7661, 39.8288], "label": "STEPANAKERT", "emoji": "🏳️", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[46.35, 40.15], [46.75, 40.15], [47.15, 39.95], [47.25, 39.65], [47.05, 39.35], [46.55, 39.35], [46.15, 39.55], [46.05, 39.85], [46.35, 40.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat4_2020war",
+      "voText": "A second war in 2020 shifted large parts of the territory back toward Azerbaijani control, ending in a Russian-brokered ceasefire.",
+      "onScreenText": "2020: the line shifted again.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AZ"],
+      "camera": { "from": [[45.9, 39.3], [47.5, 40.3]], "to": [[46.0, 39.35], [47.4, 40.25]], "pad": 100 },
+      "markers": [
+        { "lonlat": [46.7661, 39.8288], "label": "2020 CEASEFIRE LINE", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[46.35, 40.15], [46.75, 40.15], [47.15, 39.95], [47.25, 39.65], [47.05, 39.35], [46.55, 39.35], [46.15, 39.55], [46.05, 39.85], [46.35, 40.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 },
+        { "points": [[46.05, 39.85], [46.45, 39.9], [46.9, 39.75], [47.05, 39.5]], "dashed": false, "showAt": 0.3, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "In 2023, renewed conflict led nearly the entire Armenian population, around 100,000 people, to leave within days, and the republic dissolved in 2024.",
+      "onScreenText": "100,000 people left within days.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["AZ"],
+      "camera": { "from": [[46.0, 39.35], [47.4, 40.25]], "to": [[46.2, 39.6], [47.1, 40.05]], "pad": 110 },
+      "markers": [
+        { "lonlat": [46.7661, 39.8288], "label": "~100,000 PEOPLE LEFT", "emoji": "➡️", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A mountain region, three wars, one dissolved republic. A reminder of how fast a line on a map can reshape real lives. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["AZ"],
+      "camera": { "from": [[46.2, 39.6], [47.1, 40.05]], "to": [[43, 37.5], [51, 42.5]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[46.35, 40.15], [46.75, 40.15], [47.15, 39.95], [47.25, 39.65], [47.05, 39.35], [46.55, 39.35], [46.15, 39.55], [46.05, 39.85], [46.35, 40.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    }
+  ]
+}

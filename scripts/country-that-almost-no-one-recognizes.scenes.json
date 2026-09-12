@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "The Country That Exists but Almost No One Recognizes",
+    "sourceScript": "scripts/country-that-almost-no-one-recognizes.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Transnistria is a breakaway region of Moldova, not its own polygon in country-codes.json/world-atlas, so highlight stays [\"MD\"] for context and a hand-drawn `lines` loop approximates the narrow strip along the Dniester River (roughly Camenca in the north to Tiraspol/Slobozia in the south), per README's 'scenes that aren't a country' pattern."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This country has its own government, its own currency, its own army, and its own border checkpoints, and almost no nation recognizes it exists.",
+      "onScreenText": "A country almost nobody recognizes.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["MD"],
+      "camera": { "from": [[26.4, 45.3], [30.3, 48.6]], "to": [[28.2, 46.5], [30.0, 48.1]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[28.05, 48.05], [29.0, 47.9], [29.85, 47.5], [29.75, 47.0], [29.7, 46.68], [29.95, 46.52], [29.45, 46.6], [28.95, 47.0], [28.25, 47.6], [28.05, 48.05]], "dashed": true, "showAt": 0.3, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called Transnistria, a narrow strip that broke away from Moldova in 1990 and has governed itself ever since.",
+      "onScreenText": "Broke away from Moldova in 1990.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["MD"],
+      "camera": { "from": [[28.2, 46.5], [30.0, 48.1]], "to": [[28.6, 46.3], [29.9, 47.4]], "pad": 90 },
+      "markers": [
+        { "lonlat": [29.6433, 46.8403], "label": "TRANSNISTRIA", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[28.05, 48.05], [29.0, 47.9], [29.85, 47.5], [29.75, 47.0], [29.7, 46.68], [29.95, 46.52], [29.45, 46.6], [28.95, 47.0], [28.25, 47.6], [28.05, 48.05]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat3_recognition",
+      "voText": "It's recognized by no United Nations member state, not one country on Earth officially accepts it as sovereign.",
+      "onScreenText": "Recognized by zero UN members.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["MD"],
+      "camera": { "from": [[28.6, 46.3], [29.9, 47.4]], "to": [[29.2, 46.6], [30.0, 47.1]], "pad": 110 },
+      "markers": [
+        { "lonlat": [29.6433, 46.8403], "label": "TIRASPOL", "emoji": "🏳️", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[28.05, 48.05], [29.0, 47.9], [29.85, 47.5], [29.75, 47.0], [29.7, 46.68], [29.95, 46.52], [29.45, 46.6], [28.95, 47.0], [28.25, 47.6], [28.05, 48.05]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat4_border",
+      "voText": "Cross into it and your currency changes, your passport gets an unofficial stamp, and even your phone signal switches networks.",
+      "onScreenText": "Cross the line. Everything changes.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["MD"],
+      "camera": { "from": [[29.2, 46.6], [30.0, 47.1]], "to": [[29.3, 46.65], [29.85, 47.0]], "pad": 110 },
+      "markers": [
+        { "lonlat": [29.55, 46.75], "label": "BORDER CROSSING", "emoji": "🛂", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[28.05, 48.05], [29.0, 47.9], [29.85, 47.5], [29.75, 47.0], [29.7, 46.68], [29.95, 46.52], [29.45, 46.6], [28.95, 47.0], [28.25, 47.6], [28.05, 48.05]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Its flag still carries the hammer and sickle, and statues of Lenin still stand in its capital, this is a country that never left the USSR.",
+      "onScreenText": "Never actually left the USSR.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["MD"],
+      "camera": { "from": [[29.3, 46.65], [29.85, 47.0]], "to": [[29.5, 46.75], [29.75, 46.92]], "pad": 120 },
+      "markers": [
+        { "lonlat": [29.6433, 46.8403], "label": "TIRASPOL", "emoji": "☭", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A government, a currency, an army, and a border, for a country that, on paper, isn't supposed to be there at all. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["MD"],
+      "camera": { "from": [[29.5, 46.75], [29.75, 46.92]], "to": [[26.4, 45.3], [30.3, 48.6]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[28.05, 48.05], [29.0, 47.9], [29.85, 47.5], [29.75, 47.0], [29.7, 46.68], [29.95, 46.52], [29.45, 46.6], [28.95, 47.0], [28.25, 47.6], [28.05, 48.05]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    }
+  ]
+}

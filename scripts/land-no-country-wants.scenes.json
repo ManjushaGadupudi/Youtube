@@ -1,0 +1,454 @@
+{
+  "meta": {
+    "title": "The Piece of Land No Country Wants",
+    "sourceScript": "scripts/land-no-country-wants.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note_not_a_country": "Bir Tawil is unclaimed territory, not a sovereign state, and has no polygon in world-atlas -- per README's 'Scenes that aren't a country' convention, highlight is left empty and a hand-drawn gold quadrilateral (approximating its real 4-sided ~2,060 sq km border: ~95km along 22N in the north, ~46km in the south, ~26-31km north-south) stands in for it. The Hala'ib Triangle is shown as a separate approximate gold/green dual-outline shape to its northeast."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This is one of the only pieces of land on Earth that belongs to absolutely no country, and both neighbors could claim it, but won't.",
+      "onScreenText": "Belongs to no country. On purpose.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            24,
+            15
+          ],
+          [
+            40,
+            32
+          ]
+        ],
+        "to": [
+          [
+            32.4,
+            20.8
+          ],
+          [
+            35.4,
+            23.4
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.5,
+          "drawDuration": 0.4
+        }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called Bir Tawil, a stretch of desert sitting right on the border between Egypt and Sudan, about 800 square miles of unclaimed land.",
+      "onScreenText": "800 square miles. No owner.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            32.4,
+            20.8
+          ],
+          [
+            35.4,
+            23.4
+          ]
+        ],
+        "to": [
+          [
+            32.9,
+            21.4
+          ],
+          [
+            34.3,
+            22.3
+          ]
+        ],
+        "pad": 110
+      },
+      "markers": [
+        {
+          "lonlat": [
+            33.0,
+            22.2
+          ],
+          "label": "EGYPT",
+          "showAt": 0.35
+        },
+        {
+          "lonlat": [
+            33.9,
+            21.48
+          ],
+          "label": "SUDAN",
+          "showAt": 0.45
+        },
+        {
+          "lonlat": [
+            33.6,
+            21.86
+          ],
+          "label": "BIR TAWIL",
+          "showAt": 0.6
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.05,
+          "drawDuration": 0.35
+        }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "Nearby sits the real prize: the Hala'ib Triangle, a much larger, far more valuable stretch of land that both Egypt and Sudan actively claim.",
+      "onScreenText": "Hala'ib Triangle. Claimed by both.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            32.9,
+            21.4
+          ],
+          [
+            34.3,
+            22.3
+          ]
+        ],
+        "to": [
+          [
+            33.0,
+            21.3
+          ],
+          [
+            36.6,
+            23.9
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [
+        {
+          "lonlat": [
+            33.6,
+            21.86
+          ],
+          "label": "BIR TAWIL",
+          "showAt": 0.1
+        },
+        {
+          "lonlat": [
+            35.6,
+            22.5
+          ],
+          "label": "HALA'IB TRIANGLE",
+          "showAt": 0.45
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.25
+        },
+        {
+          "points": [
+            [
+              34.05,
+              22.0
+            ],
+            [
+              37.0,
+              22.0
+            ],
+            [
+              36.85,
+              23.9
+            ],
+            [
+              34.05,
+              22.0
+            ]
+          ],
+          "dashed": true,
+          "showAt": 0.45,
+          "drawDuration": 0.4
+        }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "Here's the catch: claiming Bir Tawil under international law would mean legally giving up the claim to Hala'ib. So neither country will touch it.",
+      "onScreenText": "Claim one, lose the other.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            33.0,
+            21.3
+          ],
+          [
+            36.6,
+            23.9
+          ]
+        ],
+        "to": [
+          [
+            32.9,
+            21.4
+          ],
+          [
+            34.3,
+            22.3
+          ]
+        ],
+        "pad": 110
+      },
+      "markers": [
+        {
+          "lonlat": [
+            33.6,
+            21.86
+          ],
+          "label": "BIR TAWIL",
+          "showAt": 0.1
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.2
+        }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "So it just sits there: real land, no government, no owner, occasionally 'claimed' online by random adventurers who plant a flag and leave.",
+      "onScreenText": "'Claimed' online. Not really.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            32.9,
+            21.4
+          ],
+          [
+            34.3,
+            22.3
+          ]
+        ],
+        "to": [
+          [
+            33.05,
+            21.62
+          ],
+          [
+            34.05,
+            22.1
+          ]
+        ],
+        "pad": 120
+      },
+      "markers": [
+        {
+          "lonlat": [
+            33.6,
+            21.86
+          ],
+          "label": "BIR TAWIL",
+          "emoji": "\ud83d\udea9",
+          "showAt": 0.4
+        }
+      ],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.2
+        }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "Two countries, one strip of desert, and a legal loophole that keeps it unclaimed on purpose. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more \ud83c\udf0d",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": {
+        "from": [
+          [
+            33.05,
+            21.62
+          ],
+          [
+            34.05,
+            22.1
+          ]
+        ],
+        "to": [
+          [
+            24,
+            15
+          ],
+          [
+            40,
+            32
+          ]
+        ],
+        "pad": 100
+      },
+      "markers": [],
+      "lines": [
+        {
+          "points": [
+            [
+              33.13,
+              22.0
+            ],
+            [
+              34.05,
+              22.0
+            ],
+            [
+              33.75,
+              21.72
+            ],
+            [
+              33.3,
+              21.72
+            ],
+            [
+              33.13,
+              22.0
+            ]
+          ],
+          "dashed": false,
+          "showAt": 0.0,
+          "drawDuration": 0.15
+        }
+      ]
+    }
+  ]
+}

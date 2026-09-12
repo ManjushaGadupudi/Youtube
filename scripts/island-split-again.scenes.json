@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "This Island Is Split Between Two Countries — Again",
+    "sourceScript": "scripts/island-split-again.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV. Germany (DE) and Poland (PL) are both real countries present in maps/country-codes.json, so this script uses the standard `highlight` convention for both at once."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "One island. One beach. Two countries. You can walk across the border here without ever seeing a checkpoint.",
+      "onScreenText": "No checkpoint. Just a line.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[8, 51], [20, 56]], "to": [[13.6, 53.75], [14.4, 54.05]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[14.14, 53.78], [14.19, 53.92]], "dashed": true, "showAt": 0.4, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "This is Usedom, on the Baltic Sea, divided between Germany and the Polish city of Swinoujscie, right at the island's eastern edge.",
+      "onScreenText": "Split: Germany west, Poland east.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[13.6, 53.75], [14.4, 54.05]], "to": [[13.75, 53.82], [14.32, 54.0]], "pad": 110 },
+      "markers": [
+        { "lonlat": [13.95, 53.87], "label": "USEDOM", "showAt": 0.3 },
+        { "lonlat": [14.24, 53.91], "label": "SWINOUJSCIE", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[14.14, 53.78], [14.19, 53.92]], "dashed": true, "showAt": 0.0, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "About 80% of the island is German. The rest, including its biggest town, belongs to Poland, split by a border that only shows up on maps.",
+      "onScreenText": "80% Germany. 20% Poland.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[13.75, 53.82], [14.32, 54.0]], "to": [[13.8, 53.83], [14.28, 53.99]], "pad": 120 },
+      "markers": [
+        { "lonlat": [13.95, 53.9], "label": "GERMANY", "showAt": 0.25 },
+        { "lonlat": [14.24, 53.91], "label": "SWINOUJSCIE, POLAND", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[14.14, 53.78], [14.19, 53.92]], "dashed": true, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "It's one of dozens of quiet, unmarked land borders across Europe's Schengen Zone, places where you can cross a country line without slowing down.",
+      "onScreenText": "One of dozens like it.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[13.8, 53.83], [14.28, 53.99]], "to": [[3, 44], [24, 56]], "pad": 90 },
+      "markers": [
+        { "lonlat": [14.16, 53.87], "label": "USEDOM", "showAt": 0.1 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Walk from the German side to the Polish side on the sand, and the only thing that changes is the flag on the beach umbrellas.",
+      "onScreenText": "The border is the umbrellas.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[3, 44], [24, 56]], "to": [[13.85, 53.83], [14.35, 54.0]], "pad": 120 },
+      "markers": [
+        { "lonlat": [14.16, 53.86], "label": "BEACH BORDER", "emoji": "🏖️", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[14.14, 53.78], [14.19, 53.92]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One island, one beach, two countries, and a border you could miss completely. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["DE", "PL"],
+      "camera": { "from": [[13.85, 53.83], [14.35, 54.0]], "to": [[8, 51], [20, 56]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[14.14, 53.78], [14.19, 53.92]], "dashed": true, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "The Last Divided Capital City in the World",
+    "sourceScript": "scripts/last-divided-capital-city.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Cyprus is a real polygon (highlight: [\"CY\"]). The Green Line / UN buffer zone and the Turkish-controlled north have no separate polygon in world-atlas, so the north/south split is drawn as a hand-authored `lines` entry running roughly east-west across the island through Nicosia."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This capital city has been cut in half since 1974, and the line running through it hasn't moved since.",
+      "onScreenText": "Cut in half since 1974.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CY"],
+      "camera": { "from": [[28, 31], [39, 39]], "to": [[33.05, 35.02], [33.75, 35.32]], "pad": 100 },
+      "markers": [
+        { "lonlat": [33.3823, 35.1856], "label": "NICOSIA", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[32.9, 35.17], [33.1, 35.18], [33.38, 35.17], [33.7, 35.18], [34.0, 35.16], [34.35, 35.15]], "dashed": true, "showAt": 0.35, "drawDuration": 0.55 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's Nicosia, Cyprus, split by a UN-patrolled buffer zone, the Republic of Cyprus to the south, Turkish-controlled territory to the north.",
+      "onScreenText": "Split, north and south, by the UN.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CY"],
+      "camera": { "from": [[33.05, 35.02], [33.75, 35.32]], "to": [[32.1, 34.5], [34.7, 35.75]], "pad": 90 },
+      "markers": [
+        { "lonlat": [33.3823, 35.1856], "label": "NICOSIA", "showAt": 0.15 }
+      ],
+      "lines": [
+        { "points": [[32.9, 35.17], [33.1, 35.18], [33.38, 35.17], [33.7, 35.18], [34.0, 35.16], [34.35, 35.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat3_last",
+      "voText": "It's the only capital city on Earth still divided by a hard international border, every other divided capital eventually reunified.",
+      "onScreenText": "The last divided capital on Earth.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CY"],
+      "camera": { "from": [[32.1, 34.5], [34.7, 35.75]], "to": [[33.2, 35.08], [33.58, 35.28]], "pad": 100 },
+      "markers": [
+        { "lonlat": [33.3823, 35.1856], "label": "NICOSIA", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[32.9, 35.17], [33.1, 35.18], [33.38, 35.17], [33.7, 35.18], [34.0, 35.16], [34.35, 35.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat4_checkpoint",
+      "voText": "The buffer zone runs directly through the old city, so a checkpoint sits in the middle of what used to be an ordinary shopping street.",
+      "onScreenText": "A checkpoint. In the middle of the street.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CY"],
+      "camera": { "from": [[33.2, 35.08], [33.58, 35.28]], "to": [[33.32, 35.15], [33.44, 35.22]], "pad": 120 },
+      "markers": [
+        { "lonlat": [33.3823, 35.1731], "label": "CHECKPOINT", "emoji": "🚧", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[33.1, 35.18], [33.38, 35.17], [33.7, 35.18]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Inside that buffer zone sits an entire abandoned airport, untouched since 1974, an old airliner is still parked on its runway.",
+      "onScreenText": "An airport frozen since 1974.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["CY"],
+      "camera": { "from": [[33.32, 35.15], [33.44, 35.22]], "to": [[33.22, 35.12], [33.34, 35.19]], "pad": 120 },
+      "markers": [
+        { "lonlat": [33.2799, 35.1489], "label": "OLD NICOSIA AIRPORT", "emoji": "✈️", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One capital, one line, over 50 years unmoved, and a whole airport still waiting for flights that never came back. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["CY"],
+      "camera": { "from": [[33.22, 35.12], [33.34, 35.19]], "to": [[28, 31], [39, 39]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[32.9, 35.17], [33.1, 35.18], [33.38, 35.17], [33.7, 35.18], [34.0, 35.16], [34.35, 35.15]], "dashed": true, "showAt": 0.05, "drawDuration": 0.01 }
+      ]
+    }
+  ]
+}

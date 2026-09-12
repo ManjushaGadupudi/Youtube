@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "This Country Redrew the Map So It Could Share One Calendar Day",
+    "sourceScript": "scripts/kiribati-redrew-the-date-line.md",
+    "_convention": "Duration omitted per beat -- filled from measured narration length. Kiribati (KI) is in country-codes.json but is NOT present in the world-atlas 110m countries dataset (confirmed by direct node lookup against countries-110m.json), so highlight stays [] throughout -- markers/lines carry the whole visual, per the 'scenes that aren't a country' pattern. IMPORTANT longitude convention: beats spanning the antimeridian (crossing 180 degrees) use a single CONTINUOUS longitude scale where the Line Islands' true negative longitude (e.g. -157.4) is written as +202.6 (i.e. +360) instead, for BOTH camera bbox and markers/lines within that beat, so d3.geoMercator's raw (non-wrapping) projection renders them in the correct visual position without the camera box needing west>east wraparound math. Real-world reference: Tarawa/Gilbert Islands ~172.98E,1.33N; old date line ran along 180 degrees; Kiritimati (Christmas Island) ~-157.4,1.87N (=202.6 continuous); Millennium/Caroline Island ~-150.2,-9.94 (=209.8 continuous, first land on Earth to see each new day)."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This country spans more than a thousand miles of Pacific Ocean, so far, its own calendar used to split down the middle.",
+      "onScreenText": "Split by its own calendar.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[145, -20], [220, 20]], "to": [[150, -15], [215, 15]], "pad": 100 },
+      "markers": [
+        { "lonlat": [172.98, 1.33], "label": "KIRIBATI", "showAt": 0.35 },
+        { "lonlat": [202.6, 1.87], "label": "KIRIBATI", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called Kiribati, dozens of islands stretching from the Gilbert Islands to the Line Islands, almost a third of the way around the globe.",
+      "onScreenText": "Islands 1,000+ miles apart.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[150, -15], [215, 15]], "to": [[166, -4], [180, 6]], "pad": 100 },
+      "markers": [
+        { "lonlat": [172.98, 1.33], "label": "TARAWA, KIRIBATI", "showAt": 0.4 },
+        { "lonlat": [179.5, 4.0], "label": "LINE ISLANDS, 2,000 MI EAST", "showAt": 0.65 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_old_dateline",
+      "voText": "The date line used to run straight through the country, putting its eastern islands a full calendar day behind the west.",
+      "onScreenText": "The date line cut it in half.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[166, -4], [180, 6]], "to": [[168, -10], [196, 8]], "pad": 90 },
+      "markers": [
+        { "lonlat": [173, -6], "label": "ONE DAY AHEAD", "showAt": 0.4 },
+        { "lonlat": [187, -6], "label": "ONE DAY BEHIND", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[180, -10], [180, 8]], "dashed": true, "showAt": 0.15, "drawDuration": 0.55 }
+      ]
+    },
+    {
+      "id": "beat4_redrawn_dateline",
+      "voText": "In 1995, Kiribati simply redrew the map, bending the date line east, around its own islands, so the whole country shared one single day.",
+      "onScreenText": "Kiribati redrew the map.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[168, -10], [196, 8]], "to": [[168, -12], [212, 10]], "pad": 90 },
+      "markers": [
+        { "lonlat": [195, 9], "label": "NEW DATE LINE, 1995", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[180, -10], [180, -4], [210, -4], [210, 10], [180, 10]], "dashed": false, "showAt": 0.18, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat5_first_sunrise",
+      "voText": "Now its easternmost islands sit fourteen hours ahead of New York, making Kiribati the very first place on Earth to greet each new day.",
+      "onScreenText": "First to see each new day.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[168, -12], [212, 10]], "to": [[196, -12], [212, 4]], "pad": 110 },
+      "markers": [
+        { "lonlat": [202.6, 1.87], "label": "KIRITIMATI", "emoji": "🌅", "showAt": 0.3 },
+        { "lonlat": [209.8, -9.94], "label": "MILLENNIUM ISLAND", "emoji": "🌅", "showAt": 0.5 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat6_button",
+      "voText": "One country moved the actual date line just to share a calendar with itself, and now it's the first place on Earth to see tomorrow. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[196, -12], [212, 4]], "to": [[145, -20], [220, 20]], "pad": 90 },
+      "markers": [],
+      "lines": [
+        { "points": [[180, -10], [180, -4], [210, -4], [210, 10], [180, 10]], "dashed": false, "showAt": 0.1, "drawDuration": 0.5 }
+      ]
+    }
+  ]
+}

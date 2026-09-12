@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "This Border Moves Every Few Years",
+    "sourceScript": "scripts/border-that-moves.md",
+    "_convention": "Duration omitted per beat -- build_video.js fills it in from measured narration length. highlight is ['US','MX'] throughout (the story is about the shared river border, not one country), with animated `lines` carrying the river's shifting-channel visual since no static polygon can show that."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "Most borders are fixed lines on a map. This one moves, because it's not a line, it's a river, and rivers don't sit still.",
+      "onScreenText": "This border moves.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-108, 22], [-95, 33]], "to": [[-106.9, 30.9], [-105.9, 32.1]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[-106.49, 31.76], [-106.42, 31.7], [-106.35, 31.62]], "dashed": false, "showAt": 0.3, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "The Rio Grande has marked the US-Mexico border for over 150 years, but its channel keeps shifting, sometimes overnight during a flood.",
+      "onScreenText": "A river as a border.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-106.9, 30.9], [-105.9, 32.1]], "to": [[-107.2, 25.7], [-97.0, 32.1]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-106.49, 31.76], "label": "EL PASO / JUÁREZ", "showAt": 0.5 },
+        { "lonlat": [-97.15, 25.96], "label": "GULF OF MEXICO", "showAt": 0.65 }
+      ],
+      "lines": [
+        { "points": [[-106.49, 31.76], [-104.4, 29.6], [-101.4, 29.8], [-99.5, 27.5], [-97.5, 26.0]], "dashed": false, "showAt": 0.15, "drawDuration": 0.65 }
+      ]
+    },
+    {
+      "id": "beat3_chamizal_flood",
+      "voText": "In 1864, a flood pushed the river south at El Paso, stranding a patch of Mexican land called El Chamizal on the American side.",
+      "onScreenText": "The 1864 flood.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-107.2, 25.7], [-97.0, 32.1]], "to": [[-106.62, 31.68], [-106.35, 31.85]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-106.45, 31.77], "label": "EL CHAMIZAL", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[-106.6, 31.78], [-106.5, 31.8], [-106.4, 31.79]], "dashed": true, "showAt": 0.15, "drawDuration": 0.3 },
+        { "points": [[-106.6, 31.74], [-106.5, 31.76], [-106.4, 31.75]], "dashed": false, "showAt": 0.5, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat4_dispute",
+      "voText": "For nearly a century, the US and Mexico argued over who actually owned it, because the map said one thing, and the river said another.",
+      "onScreenText": "A century-long dispute.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-106.62, 31.68], [-106.35, 31.85]], "to": [[-106.58, 31.72], [-106.4, 31.82]], "pad": 110 },
+      "markers": [
+        { "lonlat": [-106.49, 31.76], "label": "MAP VS. RIVER", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[-106.6, 31.78], [-106.5, 31.8], [-106.4, 31.79]], "dashed": true, "showAt": 0.1, "drawDuration": 0.3 },
+        { "points": [[-106.6, 31.74], [-106.5, 31.76], [-106.4, 31.75]], "dashed": false, "showAt": 0.15, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat5_concrete_channel",
+      "voText": "In 1963, both countries gave up and rebuilt the river itself, concrete-lining a new fixed channel just to make the border hold still.",
+      "onScreenText": "Concrete fixed the border.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-106.58, 31.72], [-106.4, 31.82]], "to": [[-106.56, 31.73], [-106.42, 31.8]], "pad": 120 },
+      "markers": [
+        { "lonlat": [-106.49, 31.76], "label": "NEW CHANNEL, 1963", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[-106.6, 31.76], [-106.5, 31.765], [-106.4, 31.755]], "dashed": false, "showAt": 0.15, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A river redrew a national border for a hundred years, until engineers finally poured concrete just to make geography behave. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["US", "MX"],
+      "camera": { "from": [[-106.56, 31.73], [-106.42, 31.8]], "to": [[-108, 22], [-95, 33]], "pad": 90 },
+      "markers": [],
+      "lines": [
+        { "points": [[-106.49, 31.76], [-104.4, 29.6], [-101.4, 29.8], [-99.5, 27.5], [-97.5, 26.0]], "dashed": false, "showAt": 0.1, "drawDuration": 0.5 }
+      ]
+    }
+  ]
+}
