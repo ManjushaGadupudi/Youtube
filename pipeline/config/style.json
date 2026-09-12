@@ -3,7 +3,11 @@
 
   "colors": {
     "water": "#3A6EA5",
+    "waterLight": "#5588BE",
+    "waterDark": "#1F3F63",
     "land": "#74A35D",
+    "landLight": "#8FBE76",
+    "landDark": "#4C7A3C",
     "highlight": "#D4A72C",
     "highlightStroke": "#F2CF6B",
     "background": "#0B1E33",
@@ -13,8 +17,10 @@
     "captionText": "#FFFFFF",
     "captionOutline": "#000000",
     "markerFill": "#D4A72C",
-    "markerText": "#FFFFFF",
-    "lineColor": "#F2CF6B"
+    "markerText": "#0B1E33",
+    "lineColor": "#F2CF6B",
+    "vignette": "#00000066",
+    "grainOpacity": 0.05
   },
 
   "video": {
@@ -24,8 +30,9 @@
   },
 
   "fonts": {
-    "onScreenTextFamily": "Liberation Sans, Arial, Helvetica, sans-serif",
-    "captionFamily": "Liberation Sans"
+    "_note": "Archivo Black installed system-wide (fc-list confirms it) for both the Playwright-rendered on-screen text/markers AND the ffmpeg/libass-burned captions -- a real font upgrade over the prior Liberation Sans default, no network needed at render time.",
+    "onScreenTextFamily": "Archivo Black, Liberation Sans, Arial, sans-serif",
+    "captionFamily": "Archivo Black"
   },
 
   "tts": {

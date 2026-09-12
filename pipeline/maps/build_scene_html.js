@@ -116,6 +116,7 @@ function renderTemplate(payload) {
   const { width, height } = payload.style.video;
   const c = payload.style.colors;
   const fonts = payload.style.fonts;
+  const diag = Math.hypot(width, height);
 
   return `<!doctype html>
 <html>
@@ -132,35 +133,79 @@ function renderTemplate(payload) {
     right: 6%;
     font-family: ${fonts.onScreenTextFamily};
     font-weight: 800;
-    font-size: 62px;
-    line-height: 1.18;
+    font-size: 58px;
+    line-height: 1.22;
+    letter-spacing: 0.3px;
     color: ${c.onScreenTextColor};
     text-shadow: 0 3px 0 ${c.onScreenTextShadow}, 0 0 26px ${c.onScreenTextShadow}, 0 6px 18px ${c.onScreenTextShadow};
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(14px);
+    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(.2,1.4,.4,1);
+    transform: translateY(14px) scale(0.97);
   }
-  .on-screen-text.show { opacity: 1; transform: translateY(0); }
+  .on-screen-text.show { opacity: 1; transform: translateY(0) scale(1); }
   .marker-label {
     font-family: ${fonts.onScreenTextFamily};
     font-weight: 700;
-    font-size: 28px;
+    font-size: 25px;
     fill: ${c.markerText};
-    paint-order: stroke;
-    stroke: #000000AA;
-    stroke-width: 5px;
   }
+  #vignette, #grain, #grade { pointer-events:none; }
 </style>
 </head>
 <body>
 <div id="stage">
   <svg id="map" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-    <rect id="ocean" x="0" y="0" width="${width}" height="${height}" fill="${c.water}"></rect>
-    <path id="land" fill="${c.land}"></path>
+    <defs>
+      <radialGradient id="oceanGrad" cx="42%" cy="38%" r="75%">
+        <stop offset="0%" stop-color="${c.waterLight}"></stop>
+        <stop offset="55%" stop-color="${c.water}"></stop>
+        <stop offset="100%" stop-color="${c.waterDark}"></stop>
+      </radialGradient>
+      <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="${c.landLight}"></stop>
+        <stop offset="55%" stop-color="${c.land}"></stop>
+        <stop offset="100%" stop-color="${c.landDark}"></stop>
+      </linearGradient>
+      <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="${c.highlightStroke}"></stop>
+        <stop offset="100%" stop-color="${c.highlight}"></stop>
+      </linearGradient>
+      <filter id="landShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"></feDropShadow>
+      </filter>
+      <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="blur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+      <filter id="badgeShadow" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"></feDropShadow>
+      </filter>
+      <filter id="grainFilter" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="noise"></feTurbulence>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0"></feColorMatrix>
+      </filter>
+      <radialGradient id="vignetteGrad" cx="50%" cy="46%" r="72%">
+        <stop offset="55%" stop-color="#000000" stop-opacity="0"></stop>
+        <stop offset="100%" stop-color="#000000" stop-opacity="1"></stop>
+      </radialGradient>
+      <linearGradient id="gradeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="${c.highlightStroke}" stop-opacity="0.10"></stop>
+        <stop offset="45%" stop-color="#000000" stop-opacity="0"></stop>
+        <stop offset="100%" stop-color="${c.waterDark}" stop-opacity="0.16"></stop>
+      </linearGradient>
+    </defs>
+    <rect id="ocean" x="0" y="0" width="${width}" height="${height}" fill="url(#oceanGrad)"></rect>
+    <path id="land" fill="url(#landGrad)" filter="url(#landShadow)"></path>
     <path id="borders" fill="none" stroke="${c.countryBorder}" stroke-width="1.4" stroke-linejoin="round"></path>
-    <g id="highlight" fill="${c.land}" stroke="${c.highlightStroke}" stroke-width="5"></g>
+    <g id="highlight" fill="url(#landGrad)" stroke="url(#highlightGrad)" stroke-width="6" filter="url(#softGlow)"></g>
     <g id="lines"></g>
     <g id="markers"></g>
+    <rect id="grade" x="0" y="0" width="${width}" height="${height}" fill="url(#gradeGrad)" style="mix-blend-mode:soft-light"></rect>
+    <rect id="grain" x="0" y="0" width="${width}" height="${height}" filter="url(#grainFilter)" opacity="${c.grainOpacity}" style="mix-blend-mode:overlay"></rect>
+    <rect id="vignette" x="0" y="0" width="${width}" height="${height}" fill="url(#vignetteGrad)" opacity="0.55"></rect>
   </svg>
   <div class="on-screen-text" id="onScreenText"></div>
 </div>
@@ -186,6 +231,10 @@ ${D3_BUNDLE}
   function lerp(a, b, t) { return a + (b - a) * t; }
   function lerpLog(a, b, t) { return Math.exp(lerp(Math.log(a), Math.log(b), t)); }
   function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function easeOutBack(t) {
+    const c1 = 1.70158, c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  }
 
   // Truncate an already-projected [x,y] polyline to the given fraction of
   // its total pixel length, interpolating the cut point -- used for the
@@ -236,27 +285,42 @@ ${D3_BUNDLE}
     .attr("stroke-dasharray", (d) => (d.dashed ? "14 10" : null))
     .attr("opacity", 0);
 
-  const markerSel = markersG.selectAll("g")
+  const markerSel = markersG.selectAll("g.marker")
     .data(payload.markers)
     .join("g")
-    .attr("opacity", 0);
+    .attr("class", "marker");
   markerSel.append("circle")
-    .attr("r", 10)
+    .attr("class", "marker-dot")
+    .attr("r", 9)
     .attr("fill", payload.style.colors.markerFill)
     .attr("stroke", "#ffffff")
-    .attr("stroke-width", 2);
-  markerSel.append("text")
+    .attr("stroke-width", 2.5)
+    .attr("filter", "url(#badgeShadow)");
+  const badgeSel = markerSel.append("g").attr("class", "badge").attr("transform", "translate(0,-38)");
+  badgeSel.append("rect")
+    .attr("class", "badge-rect")
+    .attr("rx", 12).attr("ry", 12)
+    .attr("fill", payload.style.colors.markerFill)
+    .attr("filter", "url(#badgeShadow)");
+  badgeSel.append("text")
     .attr("class", "marker-label")
-    .attr("x", 16)
-    .attr("y", 8)
-    .text((d) => d.label || "");
-  markerSel.filter((d) => !!d.emoji)
-    .append("text")
-    .attr("x", -14)
-    .attr("y", 9)
-    .attr("font-size", 30)
-    .attr("text-anchor", "end")
-    .text((d) => d.emoji);
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .text((d) => (d.emoji ? d.emoji + "  " : "") + (d.label || "").toUpperCase());
+
+  // Size each badge's pill to its actual rendered text (real DOM layout, so
+  // this is exact regardless of label length -- no manual width guessing).
+  badgeSel.each(function () {
+    const g = d3.select(this);
+    const textNode = g.select("text").node();
+    const bbox = textNode.getBBox();
+    const padX = 20, padY = 12;
+    g.select("rect")
+      .attr("x", bbox.x - padX)
+      .attr("y", bbox.y - padY)
+      .attr("width", bbox.width + padX * 2)
+      .attr("height", bbox.height + padY * 2);
+  });
 
   function currentProjection(t) {
     const scale = lerpLog(payload.camFrom.scale, payload.camTo.scale, t);
@@ -288,11 +352,16 @@ ${D3_BUNDLE}
       .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0));
 
     markerSel
-      .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0))
       .attr("transform", (d) => {
         const p = projection(d.lonlat);
-        return p ? "translate(" + p[0] + "," + p[1] + ")" : "translate(-9999,-9999)";
-      });
+        if (!p) return "translate(-9999,-9999)";
+        const showAt = d.showAt || 0;
+        const popDur = 0.4;
+        const localT = Math.min(1, Math.max(0, (rawT - showAt) / popDur));
+        const scale = rawT >= showAt ? easeOutBack(localT) : 0;
+        return "translate(" + p[0] + "," + p[1] + ") scale(" + Math.max(0, scale) + ")";
+      })
+      .attr("opacity", (d) => (rawT >= (d.showAt || 0) ? 1 : 0));
 
     if (payload.onScreenText && rawT >= payload.onScreenTextShowAt) {
       onScreenTextEl.classList.add("show");
