@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Africa's Borders Were Drawn With a Ruler",
+    "sourceScript": "scripts/africa-borders-drawn-with-a-ruler.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "This script highlights several real sovereign countries at once (all real polygons in country-codes.json: EG, LY, TD, NE, NA, BW) instead of one single target, because their shared straight-line edges are the whole visual point. No custom lines/markers stand in for a missing polygon here -- every highlighted country is real."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "Look closely at a map of Africa and you'll see it, dozens of perfectly straight lines slicing across the entire continent.",
+      "onScreenText": "Dozens of perfectly straight borders.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["EG", "LY", "TD", "NE", "NA", "BW"],
+      "camera": { "from": [[-20, -36], [52, 38]], "to": [[-18, -35], [50, 37]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_berlin",
+      "voText": "Most were decided at the 1884 Berlin Conference, by European powers who had barely set foot on the land they were dividing.",
+      "onScreenText": "Decided in Berlin. In 1884.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["EG", "LY", "TD", "NE", "NA", "BW"],
+      "camera": { "from": [[-18, -35], [50, 37]], "to": [[-15, 0], [40, 55]], "pad": 90 },
+      "markers": [
+        { "lonlat": [13.405, 52.52], "label": "BERLIN, 1884", "showAt": 0.3 }
+      ],
+      "lines": [
+        { "points": [[13.405, 52.52], [15.0444, 12.1]], "dashed": true, "showAt": 0.45, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat3_cutting",
+      "voText": "Those straight lines cut through rivers, mountain ranges, and ethnic groups that had nothing to do with drawing them.",
+      "onScreenText": "Cutting through rivers and peoples.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["EG", "LY", "TD", "NE"],
+      "camera": { "from": [[-15, 0], [40, 55]], "to": [[0, 7], [37, 33]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat4_half",
+      "voText": "Nearly half of Africa's modern borders are still perfectly straight lines today, more than anywhere else on Earth.",
+      "onScreenText": "Nearly half are still straight lines.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["EG", "LY", "TD", "NE", "NA", "BW"],
+      "camera": { "from": [[0, 7], [37, 33]], "to": [[-20, -36], [52, 38]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "One border between Namibia and Botswana runs so precisely straight that it was fixed with a single line of longitude on a map.",
+      "onScreenText": "One line of longitude. A border.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["NA", "BW"],
+      "camera": { "from": [[-20, -36], [52, 38]], "to": [[17.5, -27.0], [24.5, -17.0]], "pad": 100 },
+      "markers": [
+        { "lonlat": [21.0, -22.0], "label": "21°E", "showAt": 0.45 }
+      ],
+      "lines": [
+        { "points": [[21.0, -26.9], [21.0, -17.8]], "dashed": false, "showAt": 0.2, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A continent's borders, ruled straight by people who'd never walked the land, the ruler marks of a meeting none of them attended. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["EG", "LY", "TD", "NE", "NA", "BW"],
+      "camera": { "from": [[17.5, -27.0], [24.5, -17.0]], "to": [[-20, -36], [52, 38]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
