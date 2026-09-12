@@ -23,11 +23,10 @@
       "highlight": ["BW", "ZM", "ZW", "NA"],
       "camera": { "from": [[23, -20], [28, -15]], "to": [[24.6, -18.2], [26.0, -17.4]], "pad": 100 },
       "markers": [
-        { "lonlat": [25.24, -17.88], "label": "BOTSWANA", "showAt": 0.25 },
-        { "lonlat": [25.28, -17.72], "label": "ZAMBIA", "showAt": 0.32 },
-        { "lonlat": [25.38, -17.80], "label": "ZIMBABWE", "showAt": 0.4 },
-        { "lonlat": [25.13, -17.80], "label": "NAMIBIA", "showAt": 0.48 },
-        { "lonlat": [25.26, -17.793], "label": "KAZUNGULA", "showAt": 0.6 }
+        { "lonlat": [25.18, -17.97], "label": "BOTSWANA", "showAt": 0.25 },
+        { "lonlat": [25.32, -17.58], "label": "ZAMBIA", "showAt": 0.32 },
+        { "lonlat": [25.55, -17.80], "label": "ZIMBABWE", "showAt": 0.4 },
+        { "lonlat": [24.95, -17.80], "label": "NAMIBIA", "showAt": 0.48 }
       ],
       "lines": []
     },
@@ -66,7 +65,7 @@
       "camera": { "from": [[25.12, -17.85], [25.38, -17.72]], "to": [[25.14, -17.84], [25.36, -17.73]], "pad": 130 },
       "markers": [
         { "lonlat": [25.24, -17.80], "label": "BRIDGE, 2021", "emoji": "🌉", "showAt": 0.15 },
-        { "lonlat": [25.26, -17.79], "label": "TWO TRIPOINTS, NOT ONE", "showAt": 0.55 }
+        { "lonlat": [25.24, -17.755], "label": "TWO TRIPOINTS, NOT ONE", "showAt": 0.55 }
       ],
       "lines": [
         { "points": [[25.16, -17.80], [25.30, -17.80]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 }
