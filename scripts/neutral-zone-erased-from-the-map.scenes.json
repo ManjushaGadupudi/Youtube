@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "The Country-Sized Zone That No Longer Exists on Any Map",
+    "sourceScript": "scripts/neutral-zone-erased-from-the-map.md",
+    "_convention": "Duration omitted per beat -- filled from measured narration length. The Saudi-Iraqi Neutral Zone (1922-1991) is a historical jurisdiction, not a country in the map dataset -- highlight stays [] throughout for every beat; its kite-shaped outline is hand-drawn with `lines` around its real center (~29.125N, 45.521E, Uqair Protocol 1922, ~7,044 sq km, partitioned 1981-82 and formally dissolved by 1991), per the pipeline's 'scenes that aren't a country' pattern. Iraq and Saudi Arabia (both real countries, both present in country-codes.json) are labeled via markers only, kept un-highlighted so the gold accent stays reserved for the zone itself. The zone's exact historical boundary is approximated schematically for the animated outline -- not a survey-accurate polygon."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "For most of the 20th century, this desert belonged to no country. It was a neutral zone between Iraq and Saudi Arabia.",
+      "onScreenText": "A desert with no country.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[35, 12], [55, 37]], "to": [[42, 26], [50, 32]], "pad": 100 },
+      "markers": [
+        { "lonlat": [44.4, 33.3], "label": "IRAQ", "showAt": 0.3 },
+        { "lonlat": [45.0, 24.7], "label": "SAUDI ARABIA", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[44.7, 29.6], [46.5, 29.6], [46.3, 28.2], [44.9, 28.4], [44.7, 29.6]], "dashed": true, "showAt": 0.4, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "In 1922, British and Saudi negotiators created it so nomadic tribes could cross the desert freely, no fences, no checkpoints, no fixed border.",
+      "onScreenText": "Created for nomads in 1922.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[42, 26], [50, 32]], "to": [[43.5, 27.5], [47.5, 30.5]], "pad": 100 },
+      "markers": [
+        { "lonlat": [44.5, 30.3], "label": "IRAQ", "showAt": 0.15 },
+        { "lonlat": [45.2, 27.8], "label": "SAUDI ARABIA", "showAt": 0.2 }
+      ],
+      "lines": [
+        { "points": [[44.7, 29.6], [46.5, 29.6], [46.3, 28.2], [44.9, 28.4], [44.7, 29.6]], "dashed": true, "showAt": 0.35, "drawDuration": 0.55 }
+      ]
+    },
+    {
+      "id": "beat3_size",
+      "voText": "The Neutral Zone covered about 7,000 square kilometers, roughly the size of a small country, belonging to neither Iraq nor Saudi Arabia.",
+      "onScreenText": "7,000 sq km, owned by no one.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[43.5, 27.5], [47.5, 30.5]], "to": [[43.9, 27.8], [47.1, 30.1]], "pad": 100 },
+      "markers": [
+        { "lonlat": [45.5, 28.9], "label": "~7,000 KM², NO COUNTRY", "showAt": 0.45 }
+      ],
+      "lines": [
+        { "points": [[44.7, 29.6], [46.5, 29.6], [46.3, 28.2], [44.9, 28.4], [44.7, 29.6]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat4_split_pressure",
+      "voText": "By the 1980s, oil interests and modern border politics made a shared no-man's-land impossible to maintain, so both countries agreed to just split it.",
+      "onScreenText": "Too complicated to keep.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[43.9, 27.8], [47.1, 30.1]], "to": [[44.0, 27.9], [47.0, 30.0]], "pad": 110 },
+      "markers": [
+        { "lonlat": [45.5, 28.9], "label": "OIL & BORDER DISPUTES", "showAt": 0.45 }
+      ],
+      "lines": [
+        { "points": [[44.7, 29.6], [46.5, 29.6], [46.3, 28.2], [44.9, 28.4], [44.7, 29.6]], "dashed": false, "showAt": 0.05, "drawDuration": 0.3 },
+        { "points": [[44.8, 29.0], [46.4, 28.9]], "dashed": true, "showAt": 0.5, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat5_dissolved",
+      "voText": "The zone was divided in 1982 and formally dissolved by 1991, absorbed so completely that it doesn't appear on any modern map at all.",
+      "onScreenText": "Erased from the map by 1991.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": [],
+      "camera": { "from": [[44.0, 27.9], [47.0, 30.0]], "to": [[44.1, 28.0], [46.9, 29.9]], "pad": 110 },
+      "markers": [
+        { "lonlat": [45.6, 28.9], "label": "ABSORBED, GONE BY 1991", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[44.8, 29.0], [46.4, 28.9]], "dashed": false, "showAt": 0.05, "drawDuration": 0.35 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A country-sized piece of desert that belonged to no one, quietly erased by two governments and a straight line on a map. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": [],
+      "camera": { "from": [[44.1, 28.0], [46.9, 29.9]], "to": [[35, 12], [55, 37]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
