@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "The City People Think Is Made Up -- But Isn't",
+    "sourceScript": "scripts/city-people-think-is-made-up.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV.",
+    "_note": "Mali is a real country polygon (highlight: [\"ML\"]). Timbuktu itself is a marker since individual cities aren't resolved as polygons; the Niger River bend near Timbuktu and old caravan/rescue routes are drawn via `lines`."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "People use this city's name as a joke for the middle of nowhere. It's real, and it used to be one of the richest cities on Earth.",
+      "onScreenText": "It's real. And it was rich.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ML"],
+      "camera": { "from": [[-20, 0], [10, 30]], "to": [[-4.6, 16.0], [-1.5, 17.6]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's Timbuktu, in modern-day Mali, sitting near the Niger River on the southern edge of the Sahara Desert.",
+      "onScreenText": "Timbuktu, Mali. On the Sahara's edge.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ML"],
+      "camera": { "from": [[-4.6, 16.0], [-1.5, 17.6]], "to": [[-12.3, 10.1], [4.3, 25.0]], "pad": 90 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU", "showAt": 0.15 }
+      ],
+      "lines": [
+        { "points": [[-4.2, 14.5], [-3.9, 15.3], [-3.5, 16.0], [-3.0, 16.7], [-2.5, 16.9], [-1.4, 16.3]], "dashed": false, "showAt": 0.3, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat3_trade",
+      "voText": "For centuries it was a major center of the gold and salt trade, funneling caravan wealth across the desert and into the wider world.",
+      "onScreenText": "A capital of gold and salt trade.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ML"],
+      "camera": { "from": [[-12.3, 10.1], [4.3, 25.0]], "to": [[-5.0, 15.0], [-1.0, 18.5]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU", "emoji": "🪙", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[-3.9, 23.7], [-3.6, 20.5], [-3.2, 18.5], [-3.0026, 16.7666]], "dashed": true, "showAt": 0.15, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat4_manuscripts",
+      "voText": "It was also a major center of Islamic scholarship, home to libraries holding hundreds of thousands of ancient manuscripts.",
+      "onScreenText": "Hundreds of thousands of manuscripts.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ML"],
+      "camera": { "from": [[-5.0, 15.0], [-1.0, 18.5]], "to": [[-3.5, 16.35], [-2.5, 17.15]], "pad": 120 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU LIBRARIES", "emoji": "📚", "showAt": 0.35 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "In 2012, when militants threatened to destroy them, residents secretly smuggled most of those manuscripts out of the city to save them.",
+      "onScreenText": "Smuggled out to save them.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ML"],
+      "camera": { "from": [[-3.5, 16.35], [-2.5, 17.15]], "to": [[-9.0, 12.0], [-1.5, 17.5]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU", "showAt": 0.1 },
+        { "lonlat": [-8.0029, 12.6392], "label": "BAMAKO (SAFETY)", "showAt": 0.55 }
+      ],
+      "lines": [
+        { "points": [[-3.0026, 16.7666], [-8.0029, 12.6392]], "dashed": true, "showAt": 0.2, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A real population, a real airport, and a real history stranger than the legend. Timbuktu was never the middle of nowhere. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["ML"],
+      "camera": { "from": [[-9.0, 12.0], [-1.5, 17.5]], "to": [[-20, 0], [10, 30]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-3.0026, 16.7666], "label": "TIMBUKTU", "showAt": 0.05 }
+      ],
+      "lines": []
+    }
+  ]
+}
