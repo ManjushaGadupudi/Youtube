@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "The Most Dangerous Border on Earth Became a Wildlife Sanctuary",
+    "sourceScript": "scripts/dangerous-border-became-a-sanctuary.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV. North Korea (KP) and South Korea (KR) are both real countries in maps/country-codes.json and use the standard `highlight` convention; the DMZ strip itself is a hand-drawn `lines` band (not a country) following the real MDL's approximate path coast to coast, per the 'scenes that aren't a country' convention."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This is the most heavily fortified border in the world, millions of landmines, guard posts every few hundred meters, soldiers on permanent alert.",
+      "onScreenText": "The most fortified border on Earth.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[118, 30], [135, 45]], "to": [[124, 36], [130, 40]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.4, "drawDuration": 0.45 }
+      ]
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's the Korean DMZ, a 160-mile-long strip separating North and South Korea, created by the 1953 armistice that paused, but never ended, the war.",
+      "onScreenText": "160 miles. Since 1953.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[124, 36], [130, 40]], "to": [[124.8, 37.2], [129.0, 39.0]], "pad": 100 },
+      "markers": [
+        { "lonlat": [126.0, 39.5], "label": "NORTH KOREA", "showAt": 0.3 },
+        { "lonlat": [127.8, 36.8], "label": "SOUTH KOREA", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.0, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "It's only about 2.5 miles wide, but it's arguably the single most dangerous strip of land on the planet, sealed off from almost all human contact.",
+      "onScreenText": "2.5 miles. Sealed off completely.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[124.8, 37.2], [129.0, 39.0]], "to": [[125.9, 37.5], [128.7, 38.6]], "pad": 110 },
+      "markers": [
+        { "lonlat": [126.98, 38.05], "label": "DMZ", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "And because almost no human has set foot inside since 1953, it's quietly become one of the richest wildlife habitats left in Asia.",
+      "onScreenText": "No people. So wildlife moved in.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[125.9, 37.5], [128.7, 38.6]], "to": [[126.6, 37.7], [128.1, 38.5]], "pad": 120 },
+      "markers": [
+        { "lonlat": [127.3, 38.15], "label": "WILDLIFE REFUGE", "emoji": "🦌", "showAt": 0.4 }
+      ],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Endangered red-crowned cranes winter here every year, and some researchers believe a species as rare as the Amur leopard may still survive inside.",
+      "onScreenText": "Cranes. Maybe even leopards.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[126.6, 37.7], [128.1, 38.5]], "to": [[126.7, 37.9], [128.0, 38.4]], "pad": 130 },
+      "markers": [
+        { "lonlat": [127.2, 38.2], "label": "RED-CROWNED CRANES", "emoji": "🐦", "showAt": 0.3 },
+        { "lonlat": [127.7, 38.05], "label": "AMUR LEOPARD?", "emoji": "🐆", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "The most dangerous 2.5 miles on the planet turned out to be one of its most untouched. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["KP", "KR"],
+      "camera": { "from": [[126.7, 37.9], [128.0, 38.4]], "to": [[118, 30], [135, 45]], "pad": 100 },
+      "markers": [],
+      "lines": [
+        { "points": [[126.35, 37.75], [126.98, 38.05], [127.43, 38.25], [128.36, 38.33]], "dashed": false, "showAt": 0.0, "drawDuration": 0.15 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Spain Has Two Cities in Africa",
+    "sourceScript": "scripts/spain-has-two-cities-in-africa.md",
+    "_convention": "One scene-spec JSON per script, saved alongside it as <script-name>.scenes.json. Each beat's `duration` is intentionally omitted here -- build_video.js fills it in at render time from the ACTUAL measured length of that beat's generated narration WAV. Spain (ES) and Morocco (MA) are both real countries in maps/country-codes.json and use the standard `highlight` convention. Ceuta and Melilla are too small to be separate polygons in the 110m dataset (like Vatican City), so each is marked with a gold marker plus a small hand-drawn outline at its real coordinates, layered on Moroccan coastal territory."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "This is Spain. But it's not in Europe, it's sitting right on the North African coast, bordering Morocco directly.",
+      "onScreenText": "Spain. On the African coast.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-10, 30], [5, 42]], "to": [[-6.5, 34.5], [-1.5, 36.5]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-5.3213, 35.8894], "label": "CEUTA", "showAt": 0.5 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "They're called Ceuta and Melilla, two Spanish cities on Moroccan territory, both fully part of Spain, both bordering Morocco on land.",
+      "onScreenText": "Ceuta. Melilla. Both Spanish.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-6.5, 34.5], [-1.5, 36.5]], "to": [[-6.0, 34.9], [-2.5, 36.1]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-5.3213, 35.8894], "label": "CEUTA", "showAt": 0.3 },
+        { "lonlat": [-2.9381, 35.2923], "label": "MELILLA", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[-5.35, 35.875], [-5.35, 35.905], [-5.29, 35.905], [-5.29, 35.875], [-5.35, 35.875]], "dashed": false, "showAt": 0.6, "drawDuration": 0.3 },
+        { "points": [[-2.965, 35.28], [-2.965, 35.305], [-2.91, 35.305], [-2.91, 35.28], [-2.965, 35.28]], "dashed": false, "showAt": 0.7, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat3_escalation1",
+      "voText": "That makes them the European Union's only land borders with the African continent, a European border you can walk to from Morocco's own streets.",
+      "onScreenText": "The EU's only African border.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-6.0, 34.9], [-2.5, 36.1]], "to": [[-5.55, 35.75], [-5.1, 36.02]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-5.3213, 35.8894], "label": "CEUTA", "emoji": "🇪🇺", "showAt": 0.3 }
+      ],
+      "lines": [
+        { "points": [[-5.35, 35.875], [-5.35, 35.905], [-5.29, 35.905], [-5.29, 35.875], [-5.35, 35.875]], "dashed": false, "showAt": 0.0, "drawDuration": 0.3 }
+      ]
+    },
+    {
+      "id": "beat4_escalation2",
+      "voText": "Both cities are ringed by tall, layered border fences, among the most heavily fortified land borders anywhere in Europe or Africa.",
+      "onScreenText": "Ringed by tall fences.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-5.55, 35.75], [-5.1, 36.02]], "to": [[-5.5, 35.78], [-5.14, 35.99]], "pad": 120 },
+      "markers": [
+        { "lonlat": [-5.3213, 35.8894], "label": "BORDER FENCE", "emoji": "🚧", "showAt": 0.35 }
+      ],
+      "lines": [
+        { "points": [[-5.35, 35.875], [-5.35, 35.905], [-5.29, 35.905], [-5.29, 35.875], [-5.35, 35.875]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat5_twist",
+      "voText": "Morocco has never fully recognized Spain's claim to either city, a territorial dispute that's quietly run for more than 500 years.",
+      "onScreenText": "500 years. Still disputed.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-5.37, 35.865], [-5.27, 35.915]], "to": [[-6.2, 34.9], [-2.6, 36.1]], "pad": 100 },
+      "markers": [
+        { "lonlat": [-5.3213, 35.8894], "label": "CEUTA", "showAt": 0.05 },
+        { "lonlat": [-2.9381, 35.2923], "label": "MELILLA", "showAt": 0.15 }
+      ],
+      "lines": [
+        { "points": [[-5.35, 35.875], [-5.35, 35.905], [-5.29, 35.905], [-5.29, 35.875], [-5.35, 35.875]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 },
+        { "points": [[-2.965, 35.28], [-2.965, 35.305], [-2.91, 35.305], [-2.91, 35.28], [-2.965, 35.28]], "dashed": false, "showAt": 0.0, "drawDuration": 0.2 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "Two Spanish cities, one African coastline, and a five-century argument hiding in plain sight on the map. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["ES", "MA"],
+      "camera": { "from": [[-6.2, 34.9], [-2.6, 36.1]], "to": [[-10, 30], [5, 42]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
