@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "The Highest Border Crossing on Earth Shuts Down for Winter",
+    "sourceScript": "scripts/khunjerab-pass-shuts-down-for-winter.md",
+    "_convention": "Duration omitted per beat -- filled from measured narration length. Verified via WebSearch before scripting: Khunjerab Pass is at 36.85N, 75.428E (36 51'N 75 25'42\"E), elevation 4,693m/15,397ft, on the Karakoram Highway between Sost, Pakistan (~74.86E,36.55N) and Tashkurgan, China (~75.23E,37.78N); closed roughly Dec-Mar under a 1985 bilateral agreement. Both PK (586) and CN (156) confirmed present in country-codes.json and the world-atlas 110m dataset, so highlight is used for both throughout; the pass/highway itself is carried by markers + an animated route line."
+  },
+  "beats": [
+    {
+      "id": "beat1_hook",
+      "voText": "At over 15,000 feet, this is the highest paved international border crossing anywhere on Earth, and for months each year, it's completely buried in snow.",
+      "onScreenText": "15,397 feet. Buried in snow.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[65, 25], [85, 42]], "to": [[73, 34], [78, 38]], "pad": 100 },
+      "markers": [],
+      "lines": []
+    },
+    {
+      "id": "beat2_setup",
+      "voText": "It's called the Khunjerab Pass, connecting Pakistan and China through the Karakoram Mountains, at nearly 4,700 meters above sea level.",
+      "onScreenText": "Highest border crossing on Earth.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[73, 34], [78, 38]], "to": [[74.3, 35.6], [76.6, 37.4]], "pad": 100 },
+      "markers": [
+        { "lonlat": [74.5, 35.9], "label": "PAKISTAN", "showAt": 0.25 },
+        { "lonlat": [76.2, 37.2], "label": "CHINA", "showAt": 0.32 },
+        { "lonlat": [75.428, 36.85], "label": "KHUNJERAB PASS", "showAt": 0.55 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat3_altitude",
+      "voText": "The altitude is so extreme that altitude sickness is a real risk just from standing at the checkpoint, before you've even crossed the border.",
+      "onScreenText": "Altitude sickness at the checkpoint.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[74.3, 35.6], [76.6, 37.4]], "to": [[75.0, 36.6], [75.9, 37.1]], "pad": 130 },
+      "markers": [
+        { "lonlat": [75.428, 36.85], "label": "4,693 M / 15,397 FT", "emoji": "⚠️", "showAt": 0.4 }
+      ],
+      "lines": []
+    },
+    {
+      "id": "beat4_seasonal_route",
+      "voText": "Under a 1985 agreement, the pass only stays open from April through November, the rest of the year, snow makes it physically impassable.",
+      "onScreenText": "Open April–November only.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[75.0, 36.6], [75.9, 37.1]], "to": [[74.7, 36.3], [75.6, 37.9]], "pad": 100 },
+      "markers": [
+        { "lonlat": [74.86, 36.55], "label": "SOST, PAKISTAN", "showAt": 0.15 },
+        { "lonlat": [75.23, 37.78], "label": "TASHKURGAN, CHINA", "showAt": 0.6 }
+      ],
+      "lines": [
+        { "points": [[74.86, 36.55], [75.428, 36.85], [75.23, 37.78]], "dashed": true, "showAt": 0.2, "drawDuration": 0.6 }
+      ]
+    },
+    {
+      "id": "beat5_reopens",
+      "voText": "When it reopens each spring, it's briefly one of the most remote functioning borders anyone can actually drive across, before winter shuts it again.",
+      "onScreenText": "Reopens every spring.",
+      "onScreenTextShowAt": 0.12,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[74.7, 36.3], [75.6, 37.9]], "to": [[74.8, 36.4], [75.5, 37.7]], "pad": 110 },
+      "markers": [
+        { "lonlat": [75.428, 36.85], "label": "REOPENS EVERY SPRING", "showAt": 0.5 }
+      ],
+      "lines": [
+        { "points": [[74.86, 36.55], [75.428, 36.85], [75.23, 37.78]], "dashed": false, "showAt": 0.1, "drawDuration": 0.5 }
+      ]
+    },
+    {
+      "id": "beat6_button",
+      "voText": "A road so high the mountains themselves close it for half the year, and it still reopens, every single spring. Follow for more places on Earth that shouldn't exist, but do.",
+      "onScreenText": "Follow for more 🌍",
+      "onScreenTextShowAt": 0.15,
+      "highlight": ["PK", "CN"],
+      "camera": { "from": [[74.8, 36.4], [75.5, 37.7]], "to": [[65, 25], [85, 42]], "pad": 90 },
+      "markers": [],
+      "lines": []
+    }
+  ]
+}
